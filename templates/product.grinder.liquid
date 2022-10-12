@@ -1,0 +1,319 @@
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5"></script>
+<style>
+  #upsells-main,
+  .upsells__title{
+    display: none !important;
+
+  }
+</style>
+<div class="row">
+	<div class="col-md-12">
+		<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+		  <a href="/" title="{{ 'general.breadcrumbs.back_home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+		    {% if collection %}
+		      <span aria-hidden="true">&rsaquo;</span>
+		      {% if collection.handle %}
+		        {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+		        {{ collection.title | link_to: url }}
+		      {% endif %}
+		    {% endif %}
+		    <span aria-hidden="true">&rsaquo;</span>
+		    <span>{{ product.title }}</span>
+		</nav>
+	</div>
+</div>
+<div class="grinder__container">
+  <div class="grinder__image-container">
+    <div class="grinder__image-preview">
+      <div class="grinder__image-top-profile">
+        <img id="grinder-top-profile" class="grinder__image" src="//cdn.shopify.com/s/files/1/2149/0705/files/Top-Silver.png?v=1583963593" alt="">
+      </div>
+      <div class="grinder__image-middle-profile">
+        <img id="grinder-middle-profile" class="grinder__image" src="//cdn.shopify.com/s/files/1/2149/0705/files/Middle-Silver.png?v=1583970177" alt="">
+      </div>
+      <div class="grinder__image-bottom-profile">
+        <img id="grinder-bottom-profile" class="grinder__image" src="//cdn.shopify.com/s/files/1/2149/0705/files/Bottom-Silver.png?v=1583970841" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="grinder__options-and-info">
+    {% section 'grinder-product-promotion' %}
+    {% section 'grinder-top-profile' %}
+    {% section 'grinder-middle-profile' %}
+    {% section 'grinder-bottom-profile' %}
+    <form action="/cart/add" method="post" id="add-to-cart-form" {% unless section.settings.show_variant_labels %}class="product-form--hide-variant-labels"{% endunless %}>
+
+      <h5 class="custom-font compare-at-price js">
+        {% if current_variant.compare_at_price > current_variant.price %}
+          <span class="money">{{ current_variant.compare_at_price | money }}</span>
+        {% endif %}
+      </h5>
+      <h3 class="custom-font js" id="price-field"><span class="money">{{ current_variant.price | money }}</span></h3>
+
+
+
+        <div class="row">
+
+          {% if sca_product_variantCount > 1  %}
+            {% for option in product.options_with_values %}
+              <div class="selector-wrapper {% if section.settings.image_size == 'large' %}col-md-12{% else %}col-md-6{% endif %} col-sm-12 col-xs-12">
+                <label for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}</label>
+                <select class="form-control" id="SingleOptionSelector-{{ forloop.index0 }}">
+                    {% for value in option.values %}
+                    {% unless value contains '% off)' %}
+                      <option {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+                    {%endunless%}
+                    {% endfor %}
+                </select>
+              </div>
+            {% endfor %}
+          {% endif %}
+
+          <select name="id" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}" class="form-control original-select product-form__variants no-js">
+            {% for variant in product.variants %}
+{% unless variant.metafields.secomapp.freegifts %}
+{% unless variant.title contains '(Freegifts)' %}
+
+              {% if variant.available %}
+                <option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                  {{ variant.title }} - <span class="money">{{ variant.price | money }}</span>
+                </option>
+              {% else %}
+                <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+              {% endif %}
+
+{%endunless%}
+{%endunless%}
+            {% endfor %}
+          </select>
+                        
+          {% if section.settings.show_quantity_selector %}
+            <div class="selector-wrapper {% if section.settings.image_size == 'large' %}col-md-12{% else %}col-md-6{% endif %} col-sm-12 col-xs-12">
+              <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+              <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+            </div>
+          {% endif %}
+                        
+                        {% assign variant_price = current_variant.price | money_without_currency | plus: 0 %}
+          {% unless variant_price > 120 %}
+          {% for collection in product.collections %}
+            {% if collection.title contains 'All Glass Pieces' %}
+              <div class="d-flex {% if section.settings.show_quantity_selector %}col-md-6{% else %}col-md-9{% endif %} col-sm-6 col-xs-12">
+                <div class="d-flex tooltip-new">
+                  <input class="inp-cbx" id="cbx" type="checkbox" style="display: none;"/>
+                  <label class="cbx" for="cbx">
+                    <span class="cbx__actual-box">
+                      <svg width="12px" height="10px" viewbox="0 0 12 10">
+                        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                      </svg>
+                    </span>
+                  </label>
+                  <span>Add <a href="#ex1" rel="modal:open"><strong class="insurance-popup">Glass Protect</strong></a> (?) for only 
+                    {% if variant_price >= 0 and variant_price <= 29.99 %}$1.49!
+                    {% elsif variant_price >= 30 and variant_price <= 49.99 %}$2.49!
+                    {% elsif variant_price >= 50 and variant_price <= 74.99 %}$4.49!
+                    {% elsif variant_price >= 75 and variant_price <= 120 %}$5.49!
+                    {% endif %}
+                  </span>
+                  <span class="tooltiptext">Glass items can break. We get it - we’ve done it too. So get 50% off a replacement item with Glass Protect.</span>
+                </div>
+              </div>
+
+              <!-- Modal HTML embedded directly into document -->
+              <div id="ex1" class="modal modal-overflow">
+                <div class="modal__image-badges">
+                  <img src="{{ 'Glass_Protect.png' | file_img_url: '150x120' }}" alt="protect-badge">
+                  <img src="{{ 'GWN_LOGO_SIZED_FOR_MC_-_200_X_230.png' | file_img_url: '100x' }}"
+                  alt="logo"
+                  itemprop="logo">
+                </div>
+                <h1>Glass Protect Breakage Insurance </h1>
+                <h3>You break it, we replace it!</h3>
+                <p>We'll send you a code for 50% off a replacement of equal or lesser value and you pay the shipping. <strong>No need to send the broken item back, no waiting for approval, instant redemption!</strong></p>
+                <iframe width="100%" height="300" src="https://player.vimeo.com/video/383177192" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <small>Upon order completion a 50% off code will be emailed to you, it’s active immediately and redeemable for up to 6 months from purchase date.</small>
+                <a class="btn btn-custom custom-font" href="#" rel="modal:close">OK COOL. CLOSE THIS.</a>
+              </div>
+            {% endif %}
+          {% endfor %}
+          {% endunless %}
+
+          <div class="col-md-12">
+            <input id="top-line-item-property" type="text" name="properties[Top Profile]" value="Silver" hidden>
+            <input id="middle-line-item-property" type="text" name="properties[Middle Profile]" value="Silver" hidden>
+            <input id="bottom-line-item-property" type="text" name="properties[Bottom Profile]" value="Silver" hidden>
+            {% if product.available %}
+            <button type="submit" name="add" id="purchase" class="btn btn-success custom-font"
+                   data-use-ajax="{% if section.settings.open_cart_when_added %}true{% else %}false{% endif %}">
+                {{ 'products.product.add_to_cart' | t }}
+            </button>
+            {% endif %}
+          </div>
+
+          </div>
+
+      </form>
+  </div>
+</div>
+<div id="stamped-main-widget" 
+data-widget-style="standard"
+data-product-id="{{ product.id }}" 
+data-name="{{ product.title | escape }}" 
+data-url="{{ shop.url }}{{ product.url }}" 
+data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}" 
+data-description="{{ product.description | escape }}" 
+data-product-sku="{{product.handle}}"> 
+{{ product.metafields.stamped.reviews }} 
+</div>
+<div >
+  {{product.description}}
+</div>
+<script>
+  tippy('[data-tippy-content]');
+  $('.grinder__icon-container').on('click', function(){
+    $(`#grinder-${$(this).data('profile')}-profile`).attr("src", $(this).data('profile-src'));
+  })
+  
+  $("#purchase").on('click',function(e){
+    e.preventDefault();
+    $('#top-line-item-property').val($('input[name="top-profile-radio"]:checked').val());
+    $('#middle-line-item-property').val($('input[name="middle-profile-radio"]:checked').val());
+    $('#bottom-line-item-property').val($('input[name="bottom-profile-radio"]:checked').val());
+
+    $('#add-to-cart-form').submit();
+  });
+</script>
+
+<script text="text/javascript">
+  var _learnq = _learnq || [];
+
+  var item = {
+    Name: {{ product.title|json }},
+    ProductID: {{ product.id|json }},
+    Categories: {{ product.collections|map:'title'|json }},
+    ImageURL: "https:{{ product.featured_image.src|img_url:'grande' }}",
+    URL: "{{ shop.secure_url }}{{ product.url }}",
+    Brand: {{ product.vendor|json }},
+    Price: {{ product.price|money|json }},
+    CompareAtPrice: {{ product.compare_at_price_max|money|json }}
+  };
+
+  _learnq.push(['track', 'Viewed Product', item]);
+  _learnq.push(['trackViewedItem', {
+    Title: item.Name,
+    ItemId: item.ProductID,
+    Categories: item.Categories,
+    ImageUrl: item.ImageURL,
+    Url: item.URL,
+    Metadata: {
+      Brand: item.Brand,
+      Price: item.Price,
+      CompareAtPrice: item.CompareAtPrice
+    }
+  }]);
+</script>
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+<script type="application/ld+json">
+{
+       "@context": "http://schema.org/",
+       "@type": "Product",
+  	   "url": "{{shop.secure_url | escape}}{{ product.url | escape }}",
+  	   "name": "{{ product.title | escape }}",
+       "image": "https:{{ product.featured_image.src | img_url: 'master' }}",
+       "description": "{{ product.description | escape }}",
+       "brand": {
+           "name": "{{ product.vendor }}"
+       },           
+       "sku": "{{ product.variants.first.sku }}",
+       "mpn": "{{ product.variants.first.sku }}",
+       "offers": {
+           "@type": "Offer",
+           "priceCurrency": "{{ shop.currency }}",
+           "price": "{{ current_variant.price | money_without_currency }}",
+           "availability": "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
+           "seller": {
+               "@type": "Organization",
+                "name": "{{ shop.name }}"
+           },
+           "url": "{{shop.secure_url | escape}}{{ product.url | escape }}"
+       }
+       {% if product.metafields.stamped.reviews_count and product.metafields.stamped.reviews_count != "0" %},"aggregateRating": {
+"@type": "AggregateRating",
+"ratingValue": {{ product.metafields.stamped.reviews_average | round:2 }},
+"reviewCount": {{ product.metafields.stamped.reviews_count }},
+"bestRating": 5,
+"worstRating": 1
+},
+"review": {
+"@type": "Review",
+"reviewRating": {
+"@type": "Rating",
+"ratingValue": "5",
+"bestRating": "5"
+},
+"author": {
+"@type": "Organization",
+"name": "{{shop.name}}"
+}
+}
+{% endif %}
+}
+</script>
+
+
+<style>
+  .grinder__container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .grinder__image-container{
+    /* border:2px dashed #000; */
+    flex-basis: 50%;
+  }
+  .grinder__image-preview{
+    max-width: 450px;
+    width: 100%;
+    margin: 30px 0 50px;
+  }
+  .grinder__image-top-profile{
+
+  }
+  .grinder__image-middle-profile{
+    display: block;
+    margin-top: -12%;
+  }
+  .grinder__image-bottom-profile{
+    display: block;
+    margin-top: -12%;
+  }
+  .grinder__image{
+    width:100%;
+    display:block;
+  }
+  .grinder__options-and-info{
+    /* border:2px dashed #000; */
+    flex-basis: 50%;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .grinder__container{
+      flex-direction: column;
+    }
+    .grinder__image-preview{
+      margin: 0 auto;
+    }
+  }
+  @media only screen and (max-width: 550px) {
+    .grinder__profile{
+      flex-direction: column;
+      width:80%;
+      margin:0 auto;
+    }
+    .grinder__profile-info{
+      margin-bottom:1rem;
+    }
+  }
+</style>

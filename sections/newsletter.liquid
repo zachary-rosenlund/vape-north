@@ -1,0 +1,29 @@
+<div class="section__newsletter">
+  <label>{{ 'general.newsletter_form.header' | t }}</label>
+
+  {% form 'customer' %}
+    {{ form.errors | default_errors }}
+    {% if form.posted_successfully? %}
+      <p class="note form-success">{{ 'general.newsletter_form.thanks' | t }}</p>
+    {% else %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div id="newsletter-wrapper">
+        <input class="newsletter--text" type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_text' | t }}" name="contact[email]" class="input-group-field email" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off">
+          <input class="newsletter--submit" type="submit" class="btn btn-default" name="subscribe" value="{{ 'general.newsletter_form.submit' | t }}">
+      </div>
+    {% endif %}
+  {% endform %}
+</div>
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Newsletter",
+      "category": "Newsletter"
+    }
+  ]
+}
+{% endschema %}

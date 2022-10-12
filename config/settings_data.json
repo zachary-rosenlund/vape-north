@@ -1,0 +1,1812 @@
+{
+  "current": {
+    "font-colour": "#000000",
+    "link-colour": "#000000",
+    "active-link-colour": "#44813c",
+    "sale-label-colour": "#5cb85c",
+    "header-background-colour": "#fafafa",
+    "header-text-colour": "#000000",
+    "footer-background-colour": "#ebebeb",
+    "footer-text-colour": "#000000",
+    "main-menu-background-colour": "#44813c",
+    "main-menu-text-colour": "#ffffff",
+    "bg_colour": "#ffffff",
+    "indiv_product_shadowing": false,
+    "logo_colour": "#252525",
+    "logo_hover_colour": "#000000",
+    "add-to-cart-background-colour": "#44813c",
+    "add-to-cart-background-hover-colour": "#5cb85c",
+    "add-to-cart-text-colour": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#000000",
+    "image_overlay_opacity": "0.6",
+    "typography-heading-font": "typography-heading-roboto",
+    "title-bar-styling": "title-bar-lowercase",
+    "typography-body-font": "typography-body-roboto",
+    "typography-body-font-size": "15px",
+    "typography-menu-font-size": "15px",
+    "menu-case": "menu-upper-case",
+    "menu-border": true,
+    "add-to-cart-font-size": "14px",
+    "add-to-cart-text-transform": "uppercase",
+    "header_font_size": "36px",
+    "header_font_style": "normal",
+    "pop-up-text-header-text-size": "16px",
+    "pop-up-text-description-text-size": "30px",
+    "sm_facebook_link": "https:\/\/www.facebook.com\/Great-White-North-Vaporizer-Company-130039320938663\/",
+    "sm_twitter_link": "",
+    "sm_youtube_link": "https:\/\/www.youtube.com\/channel\/UCXGATLH27RTWPcbnqKESE6Q",
+    "sm_flickr_link": "",
+    "sm_pinterest_link": "",
+    "sm_instagram_link": "https:\/\/instagram.com\/gwnvc",
+    "sm_google_plus_link": "",
+    "sm_snapchat_link": "",
+    "sm_tumblr_link": "",
+    "social_sharing_products": true,
+    "social_sharing_blog": true,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_google": false,
+    "popup--enable": false,
+    "pop-up-time": "7",
+    "popup--show-image": true,
+    "popup-newsletter-top": "",
+    "pop-up-text-header-text": "",
+    "pop-up-text-description-text": "",
+    "popup--show-social-icons": false,
+    "popup--show-newsletter": true,
+    "pop-up-text-background-colour": "#ffffff",
+    "pop-up-text-header-text-colour": "#000000",
+    "show_multiple_currencies": true,
+    "currency_format": "money_with_currency_format",
+    "supported_currencies": "INR GBP CAD USD AUD EUR JPY",
+    "default_currency": "CAD",
+    "favicon": "shopify:\/\/shop_images\/GWNVC_Transparent_671a5d4a-0551-4b19-a83a-21793dcabc0e.png",
+    "checkout_header_image": "shopify:\/\/shop_images\/Untitled_3_9e342ea1-6409-406d-bcd7-03b88ac50cb9.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/GWNVC_Transparent_bce1baae-a6c2-445e-a66b-35602407df14.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "large",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#44813c",
+    "checkout_button_color": "#449d44",
+    "checkout_error_color": "#ff6d6d",
+    "redirect_use": true,
+    "redirect_force": false,
+    "redirect_1": "UK::United Kingdom::https:\/\/www.namastevaporizers.co.uk",
+    "redirect_2": "GB::United Kingdom::https:\/\/www.namastevaporizers.co.uk",
+    "redirect_3": "IE::Ireland::https:\/\/www.namastevaporizers.ie",
+    "redirect_4": "NZ::New Zealand::https:\/\/namastevapes.co.nz",
+    "redirect_5": "AU::Australia::https:\/\/www.namastevaporizers.com.au",
+    "redirect_6": "",
+    "redirect_7": "",
+    "redirect_8": "",
+    "redirect_9": "",
+    "redirect_10": "",
+    "redirect_catch_all_countries": "",
+    "redirect_catch_all_url": "",
+    "redirect_catch_all_name": "",
+    "redirect_from_message": "Looks like you're visiting from",
+    "redirect_to_message": "Would you like to go to our local partner store",
+    "redirect_approve": "Yes, please!",
+    "redirect_decline": "No thanks!",
+    "redirect_bg_color": "#ffffff",
+    "redirect_color": "#72030e",
+    "redirect_link_color": "#2a2a2a",
+    "redirect_link_hover_color": "#616161",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/GWNVC_Rectangle_b65976c0-1e64-48ba-932e-e6f9e4dd6245.png",
+          "logo_max_width": "290",
+          "logo_padding": "10",
+          "logo-placement": "within-header",
+          "top_bar_linklist": "",
+          "top_bar_social_media_icons": false,
+          "main_linklist": "main-menu",
+          "main-menu-hover": true,
+          "menu_padding": "10"
+        }
+      },
+      "image-bar": {
+        "type": "image-bar",
+        "blocks": {
+          "image-bar-1": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Buttons_Latest.jpg",
+              "link": "shopify:\/\/collections\/hot-new-products"
+            }
+          },
+          "1489719992746": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Buttons_Review.jpg",
+              "link": "shopify:\/\/blogs\/full-review-user-guides\/2020-m"
+            }
+          }
+        },
+        "block_order": [
+          "image-bar-1",
+          "1489719992746"
+        ],
+        "settings": {}
+      },
+      "text-over-image-2": {
+        "type": "text-over-image",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/Flag_of_Canada.svg_4ac89618-ce4e-44c3-a056-28af3bfed73b.png",
+          "parallax": true,
+          "title": "BUY CANADIAN!",
+          "text": "<p>Hey, I'm Sneaky Pete, welcome to my site! I've been a vaporizer enthusiast for a long time, and I'm also a passionate vaporizer advocate. If you're new to the vaporizing scene and don't know where to start, do not hesitate to reach out to me for advice and guidance. We're a small business that's big on customer service :)<\/p>\n<p><\/p>\n<p>All of our products are shipped from Canada, so you don't need to deal with the border or pay duty!<\/p>\n<p><\/p>\n<p>Thank you for stopping by!<\/p>\n<p><\/p>\n<p>Sneaky Pete<\/p>\n<p><\/p>\n<p>- Great White North Vaporizer Co.<\/p>",
+          "alignment": "center",
+          "hero_size": "medium",
+          "text-over-image-width": "fixed",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "feature-row": {
+        "type": "feature-row",
+        "disabled": true,
+        "settings": {
+          "image": "shopify:\/\/shop_images\/5_6f00b52e-2a9d-41ac-a9d0-5f26c1c85e80.jpg",
+          "layout": "right",
+          "title": "Functional and affordable glass.",
+          "text_block": "<p>We have a glass guy. &nbsp;He's awesome. &nbsp;We get him to custom make water pieces and adapters to work with the most popular vaporizers on the market. &nbsp;Water cooled vapour is the best, check out some great pieces here.<\/p>",
+          "button_label": "Shop Glass",
+          "button_link": "shopify:\/\/collections\/all-glass"
+        }
+      },
+      "instagram": {
+        "type": "instagram",
+        "disabled": true,
+        "settings": {
+          "title": "@GWNVC",
+          "show-title": true,
+          "image-padding": true,
+          "instagram-access-token": "5780242887.cf70533.e90dacbbc1be493b8cf3b59c6a0e3107",
+          "instagram-homepage-width": "fixed",
+          "grid": "6",
+          "rows": "1",
+          "sort-by": "none"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "text",
+            "settings": {
+              "title": "Contact us",
+              "richtext": "<p>1-800-677-5095<\/p>\n<p>info@vapenorth.ca<\/p>"
+            }
+          },
+          "footer-1": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Menu",
+              "footer_linklist": "main-menu"
+            }
+          },
+          "1488903932161": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Other",
+              "footer_linklist": "other"
+            }
+          },
+          "1573590509188": {
+            "type": "social",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "1488903932161",
+          "1573590509188"
+        ],
+        "settings": {
+          "show_methods_of_payment": true
+        }
+      },
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "1572627059407": {
+            "type": "text",
+            "settings": {
+              "heading": "Free Tracked Shipping In Canada Over $100"
+            }
+          },
+          "1572627193430": {
+            "type": "text",
+            "settings": {
+              "heading": "Questions? 1-800-677-5095"
+            }
+          },
+          "1572627210215": {
+            "type": "text",
+            "settings": {
+              "heading": "Email Us For Price Matching!"
+            }
+          }
+        },
+        "block_order": [
+          "1572627059407",
+          "1572627193430",
+          "1572627210215"
+        ],
+        "settings": {
+          "notification-bar--background-colour": "#44813c",
+          "notification-bar--text-colour": "#ffffff"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "grid": "4",
+          "rows": "8",
+          "show-vendor": false,
+          "hover-effect": "zoom",
+          "collection_image_enable": false,
+          "sort_enable": true,
+          "tags_enable": false
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "show-vendor": true,
+          "show_quantity_selector": false,
+          "show_variant_labels": false,
+          "open_cart_when_added": true,
+          "assurance_text": "Free shipping for orders over $100 within Canada. Fast, low-cost and discrete shipping worldwide.",
+          "assurance_image_1": "shopify:\/\/shop_images\/Discreet-Shipping_9170cb12-2c52-41f9-9db8-9079cf25f8b5.png",
+          "assurance_image_2": "shopify:\/\/shop_images\/Glass-Protect.png",
+          "enable_related_products": false,
+          "related_products_title": "People Also Like:",
+          "image_size": "small",
+          "thumbnail_position": "below",
+          "enable_zoom": true,
+          "show_reviews": false
+        }
+      },
+      "1509945881624": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured Vaporizers",
+          "show-vendor": false,
+          "hover-effect": "zoom",
+          "collection": "featured-vaporizers",
+          "grid": "4",
+          "rows": "2"
+        }
+      },
+      "1509945948650": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured Glass",
+          "show-vendor": false,
+          "hover-effect": "zoom",
+          "collection": "featured-glass",
+          "grid": "4",
+          "rows": "2"
+        }
+      },
+      "1509945969868": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured Accessories",
+          "show-vendor": false,
+          "hover-effect": "zoom",
+          "collection": "featured-accessories",
+          "grid": "4",
+          "rows": "2"
+        }
+      },
+      "1511377958982": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "1575362201067": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/200411-2020_M_REVIEW_GWN.jpg",
+              "title": "",
+              "link": "shopify:\/\/blogs\/full-review-user-guides\/2020-m"
+            }
+          },
+          "1588095042704": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/sezzle_white_gn.jpg",
+              "title": "",
+              "link": "shopify:\/\/pages\/sezzle-information"
+            }
+          },
+          "1587480268836": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/JoinNow_5f03d0d3-26fd-4e62-baa2-fef2fac6a948.jpeg",
+              "title": "",
+              "link": "shopify:\/\/pages\/sneaky-pete-new-video-sign-up-form"
+            }
+          },
+          "1587480424375": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Header_Shopify_V2_b5487386-b771-4478-a580-7013a446b6c3.jpg",
+              "title": "",
+              "link": "shopify:\/\/collections\/verified-vapes"
+            }
+          },
+          "1585099208361": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/2020dynavap.jpg",
+              "title": "",
+              "link": "shopify:\/\/products\/dynavap-2020-m-pre-order"
+            }
+          },
+          "1587480448181": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Header_Shopify_C_bf68e1a6-7583-45e2-86be-fd9c295cf7c7.jpg",
+              "title": "",
+              "link": "shopify:\/\/collections\/clearance"
+            }
+          }
+        },
+        "block_order": [
+          "1575362201067",
+          "1588095042704",
+          "1587480268836",
+          "1587480424375",
+          "1585099208361",
+          "1587480448181"
+        ],
+        "settings": {
+          "slider-animation": "fade",
+          "slider-width": "fixed",
+          "slider-slide-time": "4000"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "allow_note": true
+        }
+      },
+      "article-template": {
+        "type": "article-template",
+        "settings": {
+          "blog-sidebar-image": "shopify:\/\/shop_images\/GWNVC_Transparent_Small.png",
+          "blog-sidebar-link": "",
+          "blog_sidebar_title": "",
+          "blog_sidebar_desc": "",
+          "show_author_name": false,
+          "show_blog_tags": true,
+          "show_recent_posts": true
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "blog-posts-per-page": "10",
+          "blog-sidebar-image": "",
+          "blog-sidebar-link": "",
+          "blog_sidebar_title": "",
+          "blog_sidebar_desc": "",
+          "show_author_name": false,
+          "show_blog_tags": true,
+          "show_recent_posts": false
+        }
+      },
+      "1535145785137": {
+        "type": "collection",
+        "disabled": true,
+        "settings": {
+          "title": "Featured Bundles",
+          "show-vendor": false,
+          "hover-effect": "zoom",
+          "collection": "",
+          "grid": "4",
+          "rows": "1"
+        }
+      },
+      "1552937242418": {
+        "type": "featured-blog",
+        "disabled": true,
+        "settings": {
+          "title": "From the blog",
+          "blog": "first-impressions",
+          "post_limit": "1"
+        }
+      },
+      "1552947513145": {
+        "type": "collection-list",
+        "disabled": true,
+        "blocks": {
+          "1552947513145-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "featured-vaporizers"
+            }
+          },
+          "1552947513145-1": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "featured-glass"
+            }
+          },
+          "1552947513145-2": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "featured-accessories"
+            }
+          }
+        },
+        "block_order": [
+          "1552947513145-0",
+          "1552947513145-1",
+          "1552947513145-2"
+        ],
+        "settings": {
+          "title": "",
+          "grid": "3"
+        }
+      },
+      "1555793586517": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "1555793586517-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/420_Rules.jpg",
+              "title": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1555793586517-0"
+        ],
+        "settings": {
+          "slider-animation": "slide",
+          "slider-width": "fixed",
+          "slider-slide-time": "0"
+        }
+      },
+      "1555793642566": {
+        "type": "slideshow",
+        "disabled": true,
+        "blocks": {
+          "1555793642566-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Fire_Sale.jpg",
+              "title": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1555793642566-0"
+        ],
+        "settings": {
+          "slider-animation": "slide",
+          "slider-width": "fixed",
+          "slider-slide-time": "0"
+        }
+      },
+      "1555793674667": {
+        "type": "collection",
+        "disabled": true,
+        "settings": {
+          "title": "TIER 1 - FIRE SALE - CODE ON ITEM PAGE",
+          "show-vendor": false,
+          "hover-effect": "zoom",
+          "collection": "test",
+          "grid": "3",
+          "rows": "2"
+        }
+      },
+      "1555793729554": {
+        "type": "collection",
+        "disabled": true,
+        "settings": {
+          "title": "TIER 2 - FIRE SALE - NO CODE NEEDED",
+          "show-vendor": false,
+          "hover-effect": "zoom",
+          "collection": "4-20-fire-sale-tier-2",
+          "grid": "3",
+          "rows": "3"
+        }
+      },
+      "text-adverts": {
+        "type": "text-adverts",
+        "disabled": true,
+        "blocks": {
+          "advert-0": {
+            "type": "text",
+            "settings": {
+              "heading": "FREE TRACKED SHIPPING OVER $100! 📦",
+              "subheading": "100% AUTHENTIC PRODUCTS, WARRANTY APPROVED",
+              "link": "shopify:\/\/pages\/faq"
+            }
+          },
+          "advert-1": {
+            "type": "text",
+            "settings": {
+              "heading": "QUESTIONS? 1-800-677-5095 ☎️",
+              "subheading": "OR EMAIL INFO@VAPENORTH.CA",
+              "link": ""
+            }
+          },
+          "advert-2": {
+            "type": "text",
+            "settings": {
+              "heading": "🤑 FIND A BETTER PRICE? 🤑",
+              "subheading": "EMAIL US FOR PRICE MATCHING!",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "advert-0",
+          "advert-1",
+          "advert-2"
+        ],
+        "settings": {
+          "colors": "dark"
+        }
+      },
+      "1573672852657": {
+        "type": "review-badge",
+        "settings": {}
+      },
+      "1573754684052": {
+        "type": "newsletter",
+        "settings": {}
+      },
+      "1573759545695": {
+        "type": "authorized-dealers",
+        "blocks": {
+          "1573771789409": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Arizer.png"
+            }
+          },
+          "1573772998745": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/BBVapes_6894052f-2daf-4087-b470-5a6caf04d81a.png"
+            }
+          },
+          "1573773012435": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Blazer.png"
+            }
+          },
+          "1587156146150": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Boundless.png"
+            }
+          },
+          "1587156172401": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/CCELL.png"
+            }
+          },
+          "1573773022982": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/dabcap-logo.png"
+            }
+          },
+          "1573773034616": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/DaVinci.png"
+            }
+          },
+          "1587156234559": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Ditanium.jpg"
+            }
+          },
+          "1573773046180": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/DYNAVAP.png"
+            }
+          },
+          "1587156280032": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/EDTNT.png"
+            }
+          },
+          "1587156321123": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/EPICVAPE.png"
+            }
+          },
+          "1573773062974": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/FlowerMate.png"
+            }
+          },
+          "1587156354898": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/FocusV.png"
+            }
+          },
+          "1587156367613": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Ghost.png"
+            }
+          },
+          "1573773085404": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/greenlight-logo.jpg"
+            }
+          },
+          "1587156384506": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Healthy-Rips.png"
+            }
+          },
+          "1587156438889": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Jyarz.png"
+            }
+          },
+          "1587156450624": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Lotus-Vaporizer.png"
+            }
+          },
+          "1587156464248": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/PCKT.png"
+            }
+          },
+          "1587156500058": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/puffco.png"
+            }
+          },
+          "1587156656798": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/7TH-FLOOR-VAPES.png"
+            }
+          },
+          "1587156530285": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Simrell.png"
+            }
+          },
+          "1587156548830": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Sticky-Brick.png"
+            }
+          },
+          "1587156570769": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Storz_and_Bickel.png"
+            }
+          },
+          "1587156592915": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/VapingFans.png"
+            }
+          },
+          "1573773098621": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/vapium-logo.png"
+            }
+          },
+          "1587156605790": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/VapMod.png"
+            }
+          },
+          "1587156623562": {
+            "type": "brand-image",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/Verified_Vapes.png"
+            }
+          }
+        },
+        "block_order": [
+          "1573771789409",
+          "1573772998745",
+          "1573773012435",
+          "1587156146150",
+          "1587156172401",
+          "1573773022982",
+          "1573773034616",
+          "1587156234559",
+          "1573773046180",
+          "1587156280032",
+          "1587156321123",
+          "1573773062974",
+          "1587156354898",
+          "1587156367613",
+          "1573773085404",
+          "1587156384506",
+          "1587156438889",
+          "1587156450624",
+          "1587156464248",
+          "1587156500058",
+          "1587156656798",
+          "1587156530285",
+          "1587156548830",
+          "1587156570769",
+          "1587156592915",
+          "1573773098621",
+          "1587156605790",
+          "1587156623562"
+        ],
+        "settings": {
+          "title": "Authorized Dealer",
+          "subtitle": "Check out some of the top-rated brands we carry"
+        }
+      },
+      "grinder-product-promotion": {
+        "type": "grinder-product-promotion",
+        "settings": {
+          "product-text": "<p>The Medium Brilliant Cut Grinder is the one we recommend if you don&rsquo;t know which grinder to buy. It produces a uniform, fluffy, medium grind that will work for all your needs. The medium grinder is the most versatile&nbsp;of the 3 grinders and is sure to satisfy.<\/p>"
+        }
+      },
+      "grinder-top-profile": {
+        "type": "grinder-top-profile",
+        "blocks": {
+          "1585762453793": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Silver",
+              "icon-img": "shopify:\/\/shop_images\/color-silver_2dd2ea5b-79ac-49ea-8cb8-7183d3a47153.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Silver_dd94f26d-0270-43e4-a974-0125cca0519c.png"
+            }
+          },
+          "1585762577775": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Sapphire",
+              "icon-img": "shopify:\/\/shop_images\/color-sapphire_56ff68e3-7a63-46f4-842e-c62c38b0a020.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Sapphire_a954eff2-27de-482b-b981-63fd95f63ee0.png"
+            }
+          },
+          "1585762605226": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Emerald",
+              "icon-img": "shopify:\/\/shop_images\/color-emerald_2b570e6f-ec27-4a29-8205-e15903baf876.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Emerald_db21af26-9879-4509-b6cc-15042b5c4844.png"
+            }
+          },
+          "1585762631630": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Hematite",
+              "icon-img": "shopify:\/\/shop_images\/color-hematite_fa39be05-6223-4dc7-a39a-0916ae5f4a3c.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Hematite_cdaacb89-46f0-464c-aafc-b84f60bf969d.png"
+            }
+          },
+          "1585762657348": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Sky Blue",
+              "icon-img": "shopify:\/\/shop_images\/color-sky-blue_1d61c41d-6a93-4dff-b514-b30daa96fbb8.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Sky-Blue_7a8a0a7e-b829-4ab4-a0a8-d9c445cf48ff.png"
+            }
+          },
+          "1585762675239": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Rose Gold",
+              "icon-img": "shopify:\/\/shop_images\/color-rose-gold_da3793b5-d63e-4cec-8db0-7b4244b4685d.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Rose-Gold_588487a2-52e7-48cb-bea7-e870f7100f08.png"
+            }
+          },
+          "1585762698057": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Ruby",
+              "icon-img": "shopify:\/\/shop_images\/color-ruby_d4624e3c-316a-4fcb-ae0b-000aa1382e91.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Ruby_861a5b08-cca4-4d64-a692-c6cb19248747.png"
+            }
+          },
+          "1585762787421": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Amethyst",
+              "icon-img": "shopify:\/\/shop_images\/color-amethyst_fe30faf5-c13f-44e7-91c2-ea03d9dd4528.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Amethyst_449e2681-9058-4731-bab8-c49b54b44f7b.png"
+            }
+          },
+          "1585762809893": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Onyx",
+              "icon-img": "shopify:\/\/shop_images\/color-onyx_6ec6043a-4a97-4ec5-bf89-e81ba977fc61.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Onyx_2fe09c1e-3bd4-4fd8-b51d-a6c36ffbc4fb.png"
+            }
+          },
+          "1585762836133": {
+            "type": "top-profile",
+            "settings": {
+              "option-title": "Gold",
+              "icon-img": "shopify:\/\/shop_images\/color-gold_bed688b6-d5a2-4e59-b9f7-8bec958a34be.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Top-Gold_0779ec75-129e-44d4-9f48-4093484b32f1.png"
+            }
+          }
+        },
+        "block_order": [
+          "1585762453793",
+          "1585762577775",
+          "1585762605226",
+          "1585762631630",
+          "1585762657348",
+          "1585762675239",
+          "1585762698057",
+          "1585762787421",
+          "1585762809893",
+          "1585762836133"
+        ],
+        "settings": {
+          "profile-title": "Top Color"
+        }
+      },
+      "grinder-middle-profile": {
+        "type": "grinder-middle-profile",
+        "blocks": {
+          "1585763237576": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Silver",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-silver_3d6873da-a8ec-4eb5-9504-4209b3c77ed0.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Silver_e65dae5d-21d1-42ed-a946-674a9df99f9c.png"
+            }
+          },
+          "1585763267651": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Sapphire",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-sapphire_bb8c94e5-104b-4c9f-96ff-a819275a7af6.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Sapphire_09b03a4f-9a4b-488e-9ff9-42e37ed62624.png"
+            }
+          },
+          "1585763287273": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Emerald",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-emerald_5012f5d1-6d44-4aae-973b-78f87353b6da.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Emerald_6833ad16-7d1f-48d3-a413-aa51932af7f3.png"
+            }
+          },
+          "1585764448321": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Hematite",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-hematite_42f48237-489d-469c-a67b-6d37060422ca.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Hematite_ec057594-fc21-4b34-a7a2-75317e71e13b.png"
+            }
+          },
+          "1585764476233": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Sky Blue",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-sky-blue_d955e2e6-30fe-42ee-813d-fa4f1624915e.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Sky-Blue_2f35096f-3601-445b-8fa6-4fa05287ac95.png"
+            }
+          },
+          "1585764499010": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Rose Gold",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-rose-gold_f6fcadcf-43fa-48fb-8785-82c04c815ab9.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Rose-Gold_5ef2b307-3c44-410c-80cc-d736add82633.png"
+            }
+          },
+          "1585764518420": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Ruby",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-ruby_b9af8ddf-2954-44a3-b81a-a72f31d44a91.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Ruby_e44080f0-b286-4354-ae77-7cf79a9eb658.png"
+            }
+          },
+          "1585764659016": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Amethyst",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-amethyst_ed31b0c1-bde5-472c-bca3-a7ab83d053f9.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Amethyst_5414301b-6e30-405f-a353-931744b1df42.png"
+            }
+          },
+          "1585764685399": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Onyx",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-onyx_55dc33fd-de3f-4b73-a935-908912eacf35.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Onyx_d3c05e80-995e-495a-9586-c76a78d5a830.png"
+            }
+          },
+          "1585764706891": {
+            "type": "middle-profile",
+            "settings": {
+              "option-title": "Gold",
+              "icon-img": "shopify:\/\/shop_images\/color-C-plate-gold_48e870a9-222e-48e7-93cb-5bd384aa1026.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Middle-Gold_31d2aff2-b073-4dea-b6b9-4846b194bd9e.png"
+            }
+          }
+        },
+        "block_order": [
+          "1585763237576",
+          "1585763267651",
+          "1585763287273",
+          "1585764448321",
+          "1585764476233",
+          "1585764499010",
+          "1585764518420",
+          "1585764659016",
+          "1585764685399",
+          "1585764706891"
+        ],
+        "settings": {
+          "profile-title": "Plate Color"
+        }
+      },
+      "grinder-bottom-profile": {
+        "type": "grinder-bottom-profile",
+        "blocks": {
+          "1585764787645": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Silver",
+              "icon-img": "shopify:\/\/shop_images\/color-silver_c9c7933d-a0dc-4dbd-883e-3c05544ad82c.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Silver_c4d9edad-95e8-42dd-90f1-08fcaff31d39.png"
+            }
+          },
+          "1585764908720": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Sapphire",
+              "icon-img": "shopify:\/\/shop_images\/color-sapphire_972ed5c5-9426-469c-820f-77fb9bdac53c.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Sapphire_d9c57002-d64b-431c-8605-ae6d66b0779c.png"
+            }
+          },
+          "1585764935232": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Emerald",
+              "icon-img": "shopify:\/\/shop_images\/color-emerald_fcf1517b-3b41-483b-a92d-2c14f5f30703.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Emerald_d18a24b6-8534-4da3-9280-c62c243bac2b.png"
+            }
+          },
+          "1585765238371": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Hematite",
+              "icon-img": "shopify:\/\/shop_images\/color-hematite_e55f802f-6cba-4725-8c88-9be7f7578d30.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Hematite_9180d57c-8561-43a0-a912-22ffa903ad47.png"
+            }
+          },
+          "1585765255762": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Sky Blue",
+              "icon-img": "shopify:\/\/shop_images\/color-sky-blue_c854f801-6ed3-486e-b78d-d3c4c4aed26d.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Sky-Blue_2a39c4ac-117f-44d4-b485-b8bbd1fe2c09.png"
+            }
+          },
+          "1585765277998": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Rose Gold",
+              "icon-img": "shopify:\/\/shop_images\/color-rose-gold_d9ae8a5d-1ea4-4fe4-b5fb-3f6d605eca4c.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Rose-Gold_c8137ba4-1369-459c-97c0-4026f8efc4a9.png"
+            }
+          },
+          "1585765301924": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Ruby",
+              "icon-img": "shopify:\/\/shop_images\/color-ruby_9b670226-5977-4cda-9b1d-5a4ac735aaeb.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Ruby_e30a9e97-33b9-46b8-b9ef-bad525964f31.png"
+            }
+          },
+          "1585765321605": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Amethyst",
+              "icon-img": "shopify:\/\/shop_images\/color-amethyst_d6cbb2d6-261e-43bf-bae3-feee8bcdb90c.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Amethyst_f78092c9-48b5-4b24-973b-4905c0dea890.png"
+            }
+          },
+          "1585765347341": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Onyx",
+              "icon-img": "shopify:\/\/shop_images\/color-onyx_371711f5-fc52-43ca-891b-eec5f7d5512f.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Onyx_837f0b37-ae79-4171-bf73-5ecdc04174db.png"
+            }
+          },
+          "1585765372188": {
+            "type": "bottom-profile",
+            "settings": {
+              "option-title": "Gold",
+              "icon-img": "shopify:\/\/shop_images\/color-gold_32d82f96-777e-4dd8-8fdb-1c45c2633e4a.jpg",
+              "profile-img": "shopify:\/\/shop_images\/Bottom-Gold_79066798-eb0c-4e6f-b9ed-1af4df347daa.png"
+            }
+          }
+        },
+        "block_order": [
+          "1585764787645",
+          "1585764908720",
+          "1585764935232",
+          "1585765238371",
+          "1585765255762",
+          "1585765277998",
+          "1585765301924",
+          "1585765321605",
+          "1585765347341",
+          "1585765372188"
+        ],
+        "settings": {
+          "profile-title": "Bottom Color"
+        }
+      },
+      "1588249445485": {
+        "type": "slideshow",
+        "blocks": {
+          "1588249445485-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/420_lastchance.jpeg",
+              "title": "",
+              "link": "shopify:\/\/pages\/last-chance-4-20-sale"
+            }
+          }
+        },
+        "block_order": [
+          "1588249445485-0"
+        ],
+        "settings": {
+          "slider-animation": "slide",
+          "slider-width": "fixed",
+          "slider-slide-time": "5000"
+        }
+      }
+    },
+    "content_for_index": [
+      "1588249445485",
+      "1511377958982",
+      "image-bar",
+      "1509945881624",
+      "1573672852657",
+      "1509945948650",
+      "1573759545695",
+      "1509945969868",
+      "1573754684052",
+      "instagram",
+      "text-over-image-2",
+      "text-adverts",
+      "1552947513145",
+      "1552937242418",
+      "1535145785137",
+      "feature-row",
+      "1555793642566",
+      "1555793586517",
+      "1555793674667",
+      "1555793729554"
+    ]
+  },
+  "presets": {
+    "Stockholm": {
+      "font-colour": "#000000",
+      "link-colour": "#000000",
+      "active-link-colour": "#000000",
+      "sale-label-colour": "#f26c4f",
+      "header-background-colour": "#ebebeb",
+      "header-text-colour": "#AAB1B4",
+      "footer-background-colour": "#ebebeb",
+      "footer-text-colour": "#AAB1B4",
+      "bg_colour": "#ffffff",
+      "indiv_product_shadowing": false,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000000",
+      "add-to-cart-background-colour": "#5cb85c",
+      "add-to-cart-background-hover-colour": "#449d44",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-montserrat",
+      "title-bar-styling": "title-bar-underline",
+      "typography-body-font": "typography-body-muli",
+      "typography-body-font-size": "14px",
+      "typography-menu-font-size": "14px",
+      "menu-case": "menu-upper-case",
+      "header_font_size": "24px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "full-width"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "rows": "2"
+          }
+        },
+        "text-over-image": {
+          "type": "text-over-image",
+          "settings": {
+            "hero_size": "large"
+          }
+        },
+        "text-over-image-2": {
+          "type": "text-over-image",
+          "settings": {
+            "hero_size": "small"
+          }
+        },
+        "text-adverts": {
+          "type": "text-adverts",
+          "blocks": {
+            "advert-0": {
+              "type": "text",
+              "settings": {
+                "heading": "Free Delivery Worldwide",
+                "subheading": "Click here for more info"
+              }
+            },
+            "advert-1": {
+              "type": "text",
+              "settings": {
+                "heading": "Final Clearance Sale",
+                "subheading": "Up to 70% off"
+              }
+            },
+            "advert-2": {
+              "type": "text",
+              "settings": {
+                "heading": "Promotional Link 3",
+                "subheading": "Link to a collection, product, blog post..."
+              }
+            }
+          },
+          "block_order": [
+            "advert-0",
+            "advert-1",
+            "advert-2"
+          ],
+          "settings": {
+            "colors": "white"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "featured-blog": {
+          "type": "featured-blog",
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {}
+            },
+            "footer-1": {
+              "type": "menu",
+              "settings": {}
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "text-adverts",
+        "slideshow",
+        "image-bar",
+        "collection",
+        "text-over-image",
+        "feature-row",
+        "instagram",
+        "featured-blog",
+        "text-over-image-2"
+      ]
+    },
+    "Oslo": {
+      "font-colour": "#000000",
+      "link-colour": "#000000",
+      "active-link-colour": "#000000",
+      "sale-label-colour": "#000000",
+      "header-background-colour": "#f6f6f6",
+      "header-text-colour": "#000000",
+      "footer-background-colour": "#ffffff",
+      "footer-text-colour": "#434343",
+      "bg_colour": "#f6f6f6",
+      "indiv_product_shadowing": false,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000",
+      "add-to-cart-background-colour": "#000000",
+      "add-to-cart-background-hover-colour": "#3a3a3a",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-alegreya",
+      "title-bar-styling": "title-bar-minimal",
+      "typography-body-font": "typography-body-lato",
+      "typography-body-font-size": "14px",
+      "typography-menu-font-size": "15px",
+      "menu-case": "menu-normal-case",
+      "header_font_size": "24px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo-placement": "within-header",
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "full-width"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-3": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2",
+            "image-bar-3"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "rows": "2"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {
+            "layout": "right"
+          }
+        },
+        "featured-blog": {
+          "type": "featured-blog",
+          "settings": {}
+        },
+        "text-over-image": {
+          "type": "text-over-image",
+          "settings": {
+            "hero_size": "large"
+          }
+        },
+        "logo-bar": {
+          "type": "logo-bar",
+          "blocks": {
+            "logo-0": {
+              "type": "logo_image",
+              "settings": {}
+            },
+            "logo-1": {
+              "type": "logo_image",
+              "settings": {}
+            },
+            "logo-2": {
+              "type": "logo_image",
+              "settings": {}
+            },
+            "logo-3": {
+              "type": "logo_image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "logo-0",
+            "logo-1",
+            "logo-2",
+            "logo-3"
+          ],
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {
+            "image-padding": false,
+            "instagram-homepage-width": "full-width",
+            "rows": "1"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {}
+            },
+            "footer-1": {
+              "type": "menu",
+              "settings": {}
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "image-bar",
+        "collection",
+        "text-over-image",
+        "feature-row",
+        "featured-blog",
+        "instagram",
+        "logo-bar"
+      ]
+    },
+    "Copenhagen": {
+      "font-colour": "#000",
+      "link-colour": "#000",
+      "active-link-colour": "#000",
+      "sale-label-colour": "#f26c4f",
+      "header-background-colour": "#ffffff",
+      "header-text-colour": "#AAB1B4",
+      "footer-background-colour": "#ffffff",
+      "footer-text-colour": "#AAB1B4",
+      "bg_colour": "#ffffff",
+      "indiv_product_shadowing": false,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000",
+      "add-to-cart-background-colour": "#5cb85c",
+      "add-to-cart-background-hover-colour": "#449d44",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-varela-round",
+      "title-bar-styling": "title-bar-lowercase",
+      "typography-body-font": "typography-body-open-sans",
+      "typography-body-font-size": "13px",
+      "typography-menu-font-size": "14px",
+      "menu-case": "menu-lower-case",
+      "header_font_size": "24px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo-placement": "within-header",
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "full-width"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "grid": "3",
+            "rows": "2"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "featured-blog": {
+          "type": "featured-blog",
+          "settings": {}
+        },
+        "text-over-image": {
+          "type": "text-over-image",
+          "settings": {
+            "hero_size": "large"
+          }
+        },
+        "logo-bar": {
+          "type": "logo-bar",
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {
+            "image-padding": false,
+            "instagram-homepage-width": "full-width",
+            "rows": "1"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {}
+            },
+            "footer-1": {
+              "type": "menu",
+              "settings": {}
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "image-bar",
+        "collection",
+        "featured-blog",
+        "text-over-image",
+        "instagram"
+      ]
+    },
+    "Gothenburg": {
+      "font-colour": "#000",
+      "link-colour": "#000",
+      "active-link-colour": "#000",
+      "sale-label-colour": "#f26c4f",
+      "header-background-colour": "#ebebeb",
+      "header-text-colour": "#000000",
+      "footer-background-colour": "#ebebeb",
+      "footer-text-colour": "#000000",
+      "bg_colour": "#ffffff",
+      "indiv_product_shadowing": false,
+      "logo_colour": "#252525",
+      "logo_hover_colour": "#000",
+      "add-to-cart-background-colour": "#5cb85c",
+      "add-to-cart-background-hover-colour": "#449d44",
+      "add-to-cart-text-colour": "#ffffff",
+      "typography-heading-font": "typography-heading-work-sans",
+      "title-bar-styling": "title-bar-underline",
+      "typography-body-font": "typography-body-work-sans",
+      "typography-body-font-size": "14px",
+      "typography-menu-font-size": "14px",
+      "menu-case": "menu-normal-case",
+      "header_font_size": "24px",
+      "header_font_style": "normal",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo-placement": "left",
+            "top_bar_linklist": "",
+            "main_linklist": "main-menu"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {
+            "slider-width": "full-width"
+          }
+        },
+        "image-bar": {
+          "type": "image-bar",
+          "blocks": {
+            "image-bar-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-1": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-2": {
+              "type": "image",
+              "settings": {}
+            },
+            "image-bar-3": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "image-bar-0",
+            "image-bar-1",
+            "image-bar-2",
+            "image-bar-3"
+          ],
+          "settings": {}
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage",
+            "grid": "3",
+            "rows": "2"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "text-over-image": {
+          "type": "text-over-image",
+          "settings": {
+            "hero_size": "large"
+          }
+        },
+        "featured-blog": {
+          "type": "featured-blog",
+          "settings": {}
+        },
+        "logo-bar": {
+          "type": "logo-bar",
+          "settings": {}
+        },
+        "instagram": {
+          "type": "instagram",
+          "settings": {
+            "instagram-homepage-width": "full-width",
+            "rows": "1"
+          }
+        },
+        "text-adverts": {
+          "type": "text-adverts",
+          "blocks": {
+            "advert-0": {
+              "type": "text",
+              "settings": {
+                "heading": "Free Delivery Worldwide",
+                "subheading": "Click here for more info"
+              }
+            },
+            "advert-1": {
+              "type": "text",
+              "settings": {
+                "heading": "Final Clearance Sale",
+                "subheading": "Up to 70% off"
+              }
+            },
+            "advert-2": {
+              "type": "text",
+              "settings": {
+                "heading": "Promotional Link 3",
+                "subheading": "Link to a collection, product, blog post..."
+              }
+            }
+          },
+          "block_order": [
+            "advert-0",
+            "advert-1",
+            "advert-2"
+          ],
+          "settings": {
+            "colors": "dark"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "text",
+              "settings": {}
+            },
+            "footer-1": {
+              "type": "menu",
+              "settings": {}
+            },
+            "footer-2": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "slideshow",
+        "image-bar",
+        "collection",
+        "text-over-image",
+        "featured-blog",
+        "instagram",
+        "text-adverts"
+      ]
+    }
+  }
+}

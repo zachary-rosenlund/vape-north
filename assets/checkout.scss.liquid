@@ -1,0 +1,321 @@
+.page--banner .banner {
+    padding: .5em 0;
+    background: white;
+    border-top: 2em solid #44813c;
+    border-bottom: 2em solid #44813c;
+}
+.banner-announcement {
+    text-transform: uppercase;
+}
+.banner-announcement h1 {
+    font-weight: bold;
+    text-align: center;
+}
+.banner-announcement a, .banner-announcement a:visited {
+    color: #545454;
+}
+.banner-announcement a:hover, .banner-announcement a:active {
+    color: #2e5728;
+}
+.banner-announcement__text-accent {
+    color: #44813c;
+}
+.banner-icons {
+    font-size: 40px;
+    width: 170px;
+}
+.banner-icons__icon {
+    text-align: center;
+    max-width: 45px;
+}
+#interac img {
+    width: 86%;
+}
+.logo {
+    margin-right: auto;
+}
+.section-item{
+    padding: 0 20px; 
+}
+@media (min-width: 1020px) {
+    .page--banner .banner {
+        padding: .5em 0;
+    }
+}
+@media (max-width: 1150px) {
+    .logo {
+        margin: auto;
+    }
+    .section-item {
+        padding-top: 1em;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .banner-announcement h1 {
+        font-size: 1.1em;
+    }
+    .banner-icons__row {
+        justify-content: center!important;
+    }
+    .banner-icons__icon {
+        padding: 0 .2em;
+    }
+}
+
+/***********************************************************
+FLEX COMPONENTS
+************************************************************/
+.flex-parent{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  }
+  .flex-col{
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+  .flex-wrap {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .flex-grow {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+  }
+  .flex-col-10 {
+    flex: 0 0 10%;
+  }
+  .flex-col-20{
+    flex: 0 0 20%;
+  }
+  .flex-col-25{
+    flex: 0 0 25%;
+  }
+  .flex-col-30{
+    flex: 0 0 30%;
+  }
+  .flex-col-33{
+    flex: 0 0 33%;
+  }
+  .flex-col-33-fill{
+    flex: 0 0 33.3333333333333%;
+  }
+  .flex-col-35{
+    flex: 0 0 35%;
+  }
+  .flex-col-40 {
+    flex: 0 0 40%;
+  }
+  .flex-col-45 {
+    flex: 0 0 45%;
+  }
+  .flex-col-50 {
+    -webkit-box-flex: 1;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+  }
+  .flex-col-60{
+    flex: 0 0 60%;
+  }
+  .flex-col-65{
+    flex: 0 0 65%;
+  }
+  .flex-col-66-fill{
+    flex: 0 0 66.6666666667%;
+  }
+  .flex-col-70 {
+    -webkit-box-flex: 1;
+    -ms-flex: 0 0 70%;
+    flex: 0 0 70%;
+  }
+  .flex-col-80 {
+    -webkit-box-flex: 1;
+    -ms-flex: 0 0 80%;
+    flex: 0 0 80%;
+  }
+  .flex-col-90 {
+    -webkit-box-flex: 1;
+    -ms-flex: 0 0 90%;
+    flex: 0 0 90%;
+  }
+  .flex-col-100 {
+    flex: 0 0 100%;
+  }
+  .flex-justify-start{
+    margin-right: auto;
+  }
+  .flex-justify-end{
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  }
+  .flex-justify-center{
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .flex-justify-around{
+    justify-content: space-around;
+  }
+  .flex-justify-evenly{
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+  }
+  .flex-justify-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .flex-align-space-around{
+    -ms-flex-line-pack: distribute;
+    align-content: space-around;
+  }
+  .flex-align-start{
+    align-items: flex-start;
+  }
+  .flex-align-baseline{
+    align-items: baseline;
+  }
+  .flex-align-center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .flex-align-end{
+    align-items: flex-end;
+  }
+  .flex-align-self-start{
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+  }
+  .flex-align-self-end{
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+  
+  
+  @media screen and (max-width: 1150px) {
+    .flex-col-40-laptop{
+      flex: 0 0 40%;
+    }
+    .flex-col-60-laptop{
+      flex: 0 0 60%;
+    }
+    .flex-col-100-laptop{
+      flex: 0 0 100%;
+    }
+    .flex-wrap-laptop{
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 900px){
+    .flex-col-100-tablet{
+      flex: 0 0 100%;
+    }
+    .flex-wrap-tablet{
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .flex-col-100-mobile{
+      flex: 0 0 100%;
+    }
+    .flex-wrap-mobile{
+      flex-wrap: wrap;
+    }
+  }
+  @media only screen and (max-width: 1080px) {
+    .wrap-on-lg{
+      flex-wrap: wrap;
+    }
+    .flex-col-100-on-lg{
+      flex: 0 0 100%;
+    }
+    .order-2-lg{
+      order: 2;
+    }
+  }
+  @media only screen and (max-width: 990px) {
+    .wrap-on-md{
+      flex-wrap: wrap;
+    }
+    .flex-col-20-md{
+      flex: 0 0 20%;
+    }
+    .flex-col-30-md{
+      flex: 0 0 30%;
+    }
+    .flex-col-35-md{
+      flex: 0 0 35%;
+    }
+    .flex-col-40-md{
+      flex: 0 0 40%;
+    }
+    .flex-col-60-md{
+      flex: 0 0 60%;
+    }
+    .flex-col-100-on-md{
+      flex: 0 0 100%;
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+  @media only screen and (max-width: 860px) {
+    .wrap-below-md{
+      flex-wrap: wrap;
+    }
+    .flex-col-30-below-md{
+      flex: 0 0 30%;
+    }
+    .flex-col-40-below-md{
+      flex: 0 0 40%;
+    }
+    .flex-col-50-below-md{
+      flex: 0 0 50%;
+    }
+    .flex-col-60-below-md{
+      flex: 0 0 60%;
+    }
+    .flex-col-100-below-md{
+      flex: 0 0 100%;
+      justify-content: flex-start;
+      margin-left: 0;
+      text-align: left;
+    }
+  }
+  @media only screen and (max-width: 500px) {
+    .wrap-on-sm{
+      flex-wrap: wrap;
+    }
+    .flex-col-30-on-sm{
+      flex: 0 0 30%;
+    }
+    .flex-col-40-on-sm{
+      flex: 0 0 40%;
+    }
+    .flex-col-50-on-sm{
+      flex: 0 0 50%;
+    }
+    .flex-col-60-on-sm{
+      flex: 0 0 60%;
+    }
+    .flex-col-100-on-sm{
+      flex: 0 0 100%;
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+  @media only screen and (max-width: 350px) {
+    .wrap-on-xs{
+      flex-wrap: wrap;
+    }
+    .flex-col-100-xs{
+      flex: 0 0 100%;
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }

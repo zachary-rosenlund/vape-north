@@ -1,0 +1,103 @@
+<div class="grinder__profile">
+  <div class="grinder__profile-info">
+    {{section.settings.profile-title}}
+  </div>
+  <div class="grinder__profile-radio">
+    {% for block in section.blocks %}
+    <input type="radio" id="top-profile--{{forloop.index}}" name="top-profile-radio" hidden {% if forloop.index == 1%} checked = "checked"{% endif %} value = "{{block.settings.option-title}}">
+    <label for ="top-profile--{{forloop.index}}" 
+          class="grinder__icon-container" 
+          data-profile-src = "{{block.settings.profile-img.src | img_url:'master'}}"
+          data-profile = "top"
+          >
+      <img class="grinder__icon" src="{{block.settings.icon-img | img_url: 'master' }}" alt="" data-tippy-content="{{block.settings.option-title}}">
+    </label>
+      
+    {% endfor %}
+  </div>
+</div>
+<style>
+  input[name="bottom-profile-radio"]:checked + .grinder__icon-container .grinder__icon,
+  input[name="middle-profile-radio"]:checked + .grinder__icon-container .grinder__icon,
+  input[name="top-profile-radio"]:checked + .grinder__icon-container .grinder__icon{
+    border:2px solid #242424;
+    transition: border 250ms ease-in 0s;
+  }
+  .grinder__profile{
+    display:flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #ebebeb;
+    padding:2rem 0rem;
+  }
+  .grinder__profile-info{
+    flex-basis: 20%;
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 30px;
+  }
+  .grinder__profile-radio{
+    flex-basis: 80%;
+    display:flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .grinder__icon-container{
+    flex: 0 0 9%;
+    margin: 4px 4px 4px 0;
+    cursor: pointer;
+  }
+  .grinder__icon{
+    display:block;
+    margin: 0;
+    padding: 3px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    border:2px solid #ebebeb;
+  }
+  .grinder__icon-container:hover .grinder__icon{
+    border: 2px solid #bcbcbc;
+    transition: border 1s ease-in 0;
+  }
+</style>
+{% schema %}
+{
+  "name": "Top Profile",
+  "settings": [
+    {
+      "type": "text",
+      "id": "profile-title",
+      "label": "Profile Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "top-profile",
+      "name": "Top Profile",
+      "settings": [
+        {
+          "id": "option-title",
+          "type": "text",
+          "label": "Option Title"
+        },
+        {
+          "id": "icon-img",
+          "type": "image_picker",
+       		"label": "Profile Icon"
+        },
+        {
+          "id": "profile-img",
+          "type": "image_picker",
+          "label": "Profile Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

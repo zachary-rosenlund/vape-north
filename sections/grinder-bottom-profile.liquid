@@ -1,0 +1,53 @@
+<div class="grinder__profile">
+  <div class="grinder__profile-info">
+    {{section.settings.profile-title}}
+  </div>
+  <div class="grinder__profile-radio">
+    {% for block in section.blocks %}
+    <input type="radio" id="bottom-profile--{{forloop.index}}" name="bottom-profile-radio" hidden {% if forloop.index == 1%} checked = "checked"{% endif %}  value = "{{block.settings.option-title}}">
+    <label for ="bottom-profile--{{forloop.index}}" 
+          class="grinder__icon-container" 
+          data-profile-src = "{{block.settings.profile-img.src | img_url:'master'}}"
+          data-profile = "bottom"
+          >
+      <img class="grinder__icon" src="{{block.settings.icon-img | img_url: 'master' }}" alt="" data-tippy-content="{{block.settings.option-title}}">
+    </label>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Bottom Profile",
+  "settings": [
+    {
+      "type": "text",
+      "id": "profile-title",
+      "label": "Profile Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bottom-profile",
+      "name": "Bottom Profile",
+      "settings": [
+        {
+          "id": "option-title",
+          "type": "text",
+          "label": "Option Title"
+        },
+        {
+          "id": "icon-img",
+          "type": "image_picker",
+       		"label": "Profile Icon"
+        },
+        {
+          "id": "profile-img",
+          "type": "image_picker",
+          "label": "Profile Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,73 @@
+<div class="authorized-dealers">
+  <div class="container">
+    {% if section.blocks.size > 0 %}
+      <div class="authorized-dealers__header">
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.subtitle }}</p>
+      </div>
+    {% endif %}
+    <div class="authorized-dealers__images image-slider">
+      {% for block in section.blocks limit: section.blocks.size %}
+        <div class="authorized-dealers__image"><img src="{{ block.settings.block_image | img_url: '120x' }}" alt="Block Image"></div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Authorized Dealers Bar",
+  "settings": [
+    {
+      "label": "Section Title",
+      "id": "title",
+      "type": "text"
+    },
+    {
+      "label": "Section Subheading",
+      "id": "subtitle",
+      "type": "text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand-image",
+      "name": "Brand Image",
+      "settings": [
+        {
+          "label": "Image",
+          "id": "block_image",
+          "type": "image_picker"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Authorized Dealers Bar",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+$(document).ready(function(){
+  $('.image-slider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    infinite: false,
+    speed: 1000,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      }
+    ]
+  });
+});
+</script>

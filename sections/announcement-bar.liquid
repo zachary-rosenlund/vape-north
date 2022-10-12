@@ -1,0 +1,86 @@
+{% if section.settings.message_text != empty %} 
+  <style>
+   
+	    .notification-bar{
+	      background-color: {{ section.settings.notification-bar--background-colour }};
+	      color: {{ section.settings.notification-bar--text-colour }};
+	    }
+	    
+	    .notification-bar a{
+	      color: {{ section.settings.notification-bar--text-colour }};	    	
+	    }	    
+	
+</style>
+
+  <div class="notification-bar custom-font">
+    <!-- {% for block in section.blocks %}
+      {% assign delim = "," %}
+      {% assign added_element = block.settings.heading %}
+      {% capture appended_array %}{{ message_array | join: delim }}{{ delim }}{{ added_element }}{% endcapture %}
+      {% assign message_array = appended_array | split: delim %}
+    {% endfor %}
+    <a href="" class="notification-bar__message typewrite" data-period="2000" 
+      data-type='[{% for message in message_array %}{% if forloop.first %}{% elsif forloop.last %}"{{ message }}"{% else %}"{{ message }}",{% endif %}{% endfor %}]'>
+      <span class="wrap"></span>
+    </a> -->
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "color",
+      "id": "notification-bar--background-colour",
+      "label": "Announcement background",
+      "default": "#464646"
+    },
+    {
+      "type": "color",
+      "id": "notification-bar--text-colour",
+      "label": "Announcement text",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Advert",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text adverts",
+      "category": "Text",
+      "blocks": [
+  			{
+  				"type": "text",
+  				"settings": {
+            "heading": "Free Delivery Worldwide"
+          }
+  			},
+        {
+          "type": "text",
+          "settings": {
+            "heading": "Final Clearance Sale"
+          }
+        },
+        {
+          "type": "text",
+          "settings": {
+            "heading": "Promotional Link 3"
+          }
+        }
+  		]
+    }
+  ]
+}
+{% endschema %}

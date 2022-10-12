@@ -1,0 +1,1169 @@
+{%- include 'bold-product' with product, hide_action: 'break', output: 'none' -%}
+{%- assign product_thumb_size = '160x160' -%}
+{%- assign product_image_zoom_size = '1024x1024' -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
+{% case section.settings.image_size %}
+{% when 'small' %}
+{%- assign product_image_width = 6 -%}
+{%- assign product_description_width = 'col-lg-6' -%}
+{%- assign product_image_size = '345x' -%}
+{% when 'medium' %}
+{%- assign product_image_width = 7 -%}
+{%- assign product_description_width = 'col-lg-5' -%}
+{%- assign product_image_size = '530x' -%}
+{% when 'large' %}
+{%- assign product_image_width = 8 -%}
+{%- assign product_description_width = 'col-lg-4' -%}
+{%- assign product_image_size = '720x' -%}
+{% endcase %}
+
+{% if section.settings.thumbnail_position != 'below' %}
+{% assign product_image_width = product_image_width | minus:1 %}
+{% endif %}
+
+<meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+<meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+<div class="row">
+  <div class="col-lg-8 col-sm-6">
+
+    <nav class="breadcrumb text-uppercase" role="navigation" aria-label="breadcrumbs">
+      <a href="/" title="{{ 'general.breadcrumbs.back_home' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+
+      {% if collection %}
+      <span aria-hidden="true"> / </span>
+      {% if collection.handle %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+      {{ collection.title | link_to: url }}
+      {% endif %}
+      {% endif %}
+      <span aria-hidden="true"> / </span>
+      {% assign productTitle = product.title | split: ' by ' | first %}
+      <span>{{ productTitle | remove: 'The ' }}</span>
+
+    </nav>
+
+  </div>
+  <div class="col-lg-4 col-sm-6 d-none d-md-block">
+    {% if section.settings.show-vendor %}
+    <div class="indiv-product-vendor-text text-right">BY {{ product.vendor }}</div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="row" id="product-box" data-section-id="{{ section.id }}">
+
+  {% if section.settings.thumbnail_position == 'left' %}
+  {% if product.images.size > 1 %}
+  <div class="col-md-1 product-page--side-thumbnails">
+    <div class="row">
+      <ul id="product-thumbnails">
+        {% for image in product.images %}
+        <li class="col-md-12 col-sm-12{% cycle ' alpha clearcolumn', '', '', ' omega' %}">
+          <a href="{{ image | product_img_url: 'original' }}" title="{{ image.alt | escape }}" class="image-swap">
+            <img src="{{ image | product_img_url: 'medium'}}" alt="{{ image.alt | escape }}" />
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  <div class="product-title-area row">
+    <h1 class="product-description-header text-uppercase text-center">{{ productTitle | remove: 'The ' }}</h1>
+    {% if section.settings.show-vendor %}
+      <div class="d-block d-md-none indiv-product-vendor-text text-center">BY {{ product.vendor }}</div>
+    {% endif %}
+  </div>
+
+  <div class="col-lg-{{ product_image_width }} product-images">
+
+    <div
+      class="sale-badge product-price__sale-label-{{ section.id }}{% unless current_variant.compare_at_price > current_variant.price %} hide{% endunless %}">
+      {{ 'products.general.sale' | t }}</div>
+
+    <!-- The first image pulled from the product is a large image (480x480), subsequent images are "compact" which is 160x160 -->
+    <div id="product_images">
+      {% for image in product.images %}
+      {% if forloop.first %}
+      {% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+      <div class="featured-image-div" {% if section.settings.enable_zoom %}data-zoom="true" {% endif %}>
+        <img id="FeaturedImage-{{ section.id }}" src="{{ featured_image | img_url: 'master' }}"
+          alt="{{ featured_image.alt | escape }}" class="product-main-image" />
+        <div class="hidden" id="featured-image-loader">
+          <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+      {% if section.settings.thumbnail_position == 'below' %}
+      {% if product.images.size > 1 %}
+      <div class="row">
+        <ul id="product-thumbnails">
+          {% for image in product.images %}
+          <li class="col-md-3 col-sm-3{% cycle ' alpha clearcolumn', '', '', ' omega' %}">
+            <a href="{{ image | product_img_url: 'original' }}" title="{{ image.alt | escape }}" class="image-swap">
+              <img src="{{ image | product_img_url: 'medium'}}" alt="{{ image.alt | escape }}" />
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% endif %}
+
+    </div>
+
+    <div id="mobile-product-images">
+      <div class="flexslider-container col-md-12">
+        <div class="flexslider mobile-product-slider">
+          <ul id="product-thumbnails" class="slides">
+            {% for image in product.images %}
+            <li>
+              <img src="{{ image | product_img_url: 'grande'}}" alt="{{ image.alt | escape }}" class="img-responsive" />
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+
+  {% if section.settings.thumbnail_position == 'right' %}
+  {% if product.images.size > 1 %}
+  <div class="col-md-1 product-page--side-thumbnails">
+    <div class="row">
+      <ul id="product-thumbnails">
+        {% for image in product.images %}
+        <li class="col-md-12 col-sm-12{% cycle ' alpha clearcolumn', '', '', ' omega' %}">
+          <a href="{{ image | product_img_url: 'original' }}" title="{{ image.alt | escape }}" class="image-swap">
+            <img src="{{ image | product_img_url: 'medium'}}" alt="{{ image.alt | escape }}" />
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+
+  <div class="{{ product_description_width }}">
+
+    <section class="entry-content product-description-main-wrapper pl-1 pr-1">
+      {% if product.metafields.pdp.product_overview != blank %}
+        <p class="product-overview mb-1">{{ product.metafields.pdp.product_overview }}</p>
+      {% endif %}
+
+      <span class="stamped-product-reviews-badge stamped-main-badge mr-2 d-none d-md-inline-block" data-id="{{ product.id }}"
+        data-product-sku="{{ product.handle }}"
+        style="display: inline-block;">{{ product.metafields.stamped.badge }}</span><span
+        class="stamped-product-reviews-badge stamped-main-badge d-none d-md-inline-block" data-id="{{ product.id }}"
+        data-product-sku="{{ product.handle }}" style="display: inline-block;" data-type="qna"></span>
+
+      <div class="product-description-wrapper d-none d-md-block mt-2 mb-2">
+        {{ product.description }}
+      </div>
+
+      {% if product.available %}
+        <form action="/cart/add" method="post" id="add-to-cart-form"
+          {% unless section.settings.show_variant_labels %}class="product-form--hide-variant-labels" {% endunless %}>
+          <div class="d-none d-md-flex position-relative justify-content-center flex-column flex-md-row mb-3">
+            <div class="d-flex add-to-cart-section align-items-center">
+              <button type="submit" name="add" id="purchase" class="btn btn-success custom-font"
+                data-use-ajax="{% if section.settings.open_cart_when_added %}true{% else %}false{% endif %}">
+                {{ 'products.product.add_to_cart' | t }}
+              </button>
+            </div>
+            <div class="add-to-cart-section">
+              <div id="price-field" class="product-price d-flex justify-content-around align-items-baseline">
+                <span class="money">{{ current_variant.price | money_with_currency }}</span>
+                <!-- <span class="currency">&nbsp;{{ shop.currency }}</span> -->
+              </div>
+              <h5 class="price-guaranteed text-uppercase text-center">Best price guaranteed</h5>
+            </div>
+          </div>
+
+          <div class="d-flex d-md-none justify-content-center flex-column flex-md-row">
+            <div class="add-to-cart-section">
+              <div id="price-field" class="product-price d-flex justify-content-around align-items-baseline">
+                <span class="money">{{ current_variant.price | money_with_currency }}</span>
+                <!-- <span class="currency">&nbsp;{{ shop.currency }}</span> -->
+              </div>
+              <h5 class="price-guaranteed text-uppercase text-center">Best price guaranteed</h5>
+            </div>
+            <div class="d-flex add-to-cart-section align-items-center">
+              <button type="submit" name="add" id="purchase" class="btn btn-success custom-font"
+                data-use-ajax="{% if section.settings.open_cart_when_added %}true{% else %}false{% endif %}">
+                {{ 'products.product.add_to_cart' | t }}
+              </button>
+            </div>
+          </div>
+
+          <div class="row">
+            {% if product.variants.size > 1  %}
+            {% for option in product.options_with_values %}
+            <div
+              class="selector-wrapper {% if section.settings.image_size == 'large' %}col-md-12{% else %}col-md-6{% endif %} col-sm-12 col-xs-12">
+              <label for="SingleOptionSelector-{{ forloop.index0 }}">{{ option.name }}</label>
+              <select class="form-control" id="SingleOptionSelector-{{ forloop.index0 }}">
+                {% for value in option.values %}
+                <option {% if option.selected_value == value %}selected{% endif %}>{{ value }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            <select name="id" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}"
+              class="form-control original-select product-form__variants no-js">
+              {% for variant in product.variants %}
+              {% if variant.available %}
+              <option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                {{ variant.title }} - <span class="money">{{ variant.price | money }}</span>
+              </option>
+              {% else %}
+              <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+              {% endif %}
+              {% endfor %}
+            </select>
+
+            <div class="bold_options" data-product-id="{{ product.id }}"></div>
+            {% if section.settings.show_quantity_selector %}
+            <div
+              class="selector-wrapper {% if section.settings.image_size == 'large' %}col-md-12{% else %}col-md-6{% endif %} col-sm-12 col-xs-12">
+              <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+              <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+            </div>
+            {% endif %}
+            {% assign variant_price = current_variant.price | money_without_currency | plus: 0 %}
+            {% unless variant_price > 120 %}
+            {% for collection in product.collections %}
+            {% if collection.title contains 'All Glass Pieces' %}
+            <div
+              class="d-flex {% if section.settings.show_quantity_selector %}col-md-6{% else %}col-md-9{% endif %} col-sm-6 col-xs-12 mt-1">
+              <div class="d-flex tooltip-new">
+                <input class="inp-cbx" id="cbx" type="checkbox" style="display: none;" />
+                <label class="cbx" for="cbx">
+                  <span class="cbx__actual-box">
+                    <svg width="12px" height="10px" viewbox="0 0 12 10">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                  </span>
+                </label>
+                <span>Add <a href="#ex1" rel="modal:open"><strong class="insurance-popup">Glass Protect</strong></a> (?)
+                  for only
+                  {% if variant_price >= 0 and variant_price <= 29.99 %}$1.49!
+                  {% elsif variant_price >= 30 and variant_price <= 49.99 %}$2.49!
+                  {% elsif variant_price >= 50 and variant_price <= 74.99 %}$4.49!
+                  {% elsif variant_price >= 75 and variant_price <= 120 %}$5.49!
+                  {% endif %}
+                </span>
+                <span class="tooltiptext">Glass items can break. We get it - we’ve done it too. So get 50% off a
+                  replacement item with Glass Protect.</span>
+              </div>
+            </div>
+
+            <!-- Modal HTML embedded directly into document -->
+            <div id="ex1" class="modal modal-overflow">
+              <div class="modal__image-badges">
+                <img src="{{ 'Glass_Protect.png' | file_img_url: '150x120' }}" alt="protect-badge">
+                <img src="{{ 'GWN_LOGO_SIZED_FOR_MC_-_200_X_230.png' | file_img_url: '150x' }}" alt="logo"
+                  itemprop="logo">
+              </div>
+              <h1>Glass Protect Breakage Insurance </h1>
+              <h3>You break it, we replace it!</h3>
+              <p>We'll send you a code for 50% off a replacement of equal or lesser value and you pay the shipping.
+                <strong>No need to send the broken item back, no waiting for approval, instant redemption!</strong></p>
+              <iframe width="100%" height="300" src="https://www.youtube.com/embed/kocJcSGzZ1g" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <small>Upon order completion a 50% off code will be emailed to you, it’s active immediately and redeemable
+                for up to 6 months from purchase date.</small>
+              <a class="btn btn-custom custom-font" href="#" rel="modal:close">OK COOL. CLOSE THIS.</a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endunless %}
+          </div>
+        </form>
+      {% else %}
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="product-out-of-stock">{{ 'products.product.sorry_stock' | t }}</div>
+        </div>
+      {% endif %}
+      <div class="row assurance-details flex-column flex-md-row d-flex justify-content-between mt-2">
+        <p class="assurance-text m-0">{{ section.settings.assurance_text }}</p>
+        <div class="assurance-images d-flex justify-content-between">
+          <div>
+            <img src="{{ section.settings.assurance_image_1 | img_url: '150x' }}" alt="Assurance Images">
+          </div>
+          <div>
+            <img src="{{ section.settings.assurance_image_2 | img_url: '80x' }}" alt="Assurance Images">
+          </div>
+        </div>
+      </div>
+      {% if product.metafields.pdp.included != blank %}
+        <div class="pdp-included mt-3 mb-2">
+          <h4 class="fw-lt text-uppercase text-center mb-1">Included</h4>
+          <p>{{ product.metafields.pdp.included }}</p>
+        </div>
+      {% endif %}
+      {% include 'sca_freegift_price' with product %}
+      <div class="sca-fg-cat-list" style="display: none;" name="secomapp-fg-data-{{ product.id }}"> </div>
+      <div class="d-flex align-items-baseline justify-content-between">
+        <span class="stamped-product-reviews-badge stamped-main-badge mr-2 d-inline-block d-md-none" data-id="{{ product.id }}"
+          data-product-sku="{{ product.handle }}"
+          style="display: inline-block;">{{ product.metafields.stamped.badge }}</span><span
+          class="stamped-product-reviews-badge stamped-main-badge d-inline-block d-md-none" data-id="{{ product.id }}"
+          data-product-sku="{{ product.handle }}" style="display: inline-block;" data-type="qna"></span>
+      </div>
+
+      <div class="product-description-wrapper d-block d-md-none mt-2 mb-2">
+        {{ product.description }}
+      </div>
+    </section>
+  </div>
+</div>
+<div id='upselly_widget_holder' class="mb-6" style="display:none !important"></div>
+{% if product.metafields.global.related_products %}
+{% assign relatedProductsArray = product.metafields.global.related_products | newline_to_br | strip_newlines | split:'<br />' %} 
+{% assign neededScreenSize = relatedProductsArray.size | times: 240 %} <!-- 200px max height + 17px margin on both sides ~= 240 -->
+<div class="custom-upsells__product-wrapper">
+  <div class="custom-upsells__title">
+    FREQUENTLY BOUGHT TOGETHER
+  </div>
+  <div class="custom-upsells__products">
+    {% for relatedProduct in relatedProductsArray %}
+      {% if all_products[relatedProduct] != blank %}
+        {% assign currentRelated = all_products[relatedProduct] %}
+        <div class="custom-upsells__product">
+          <div class="custom-upsells__product-image"><img src="{{currentRelated.featured_image | img_url: '200x150'}}" alt="{{relatedProduct.featured_image.alt}}"></div>
+          <div class="custom-upsells__product-title"><a href="{{currentRelated.url}}">{{currentRelated.title}}</a></div>
+          {% if currentRelated.variants.size > 1 %}
+          <div class="custom-upsells__variant-selector">
+            <select name="variant-selector--{{currentRelated.id}}" class="related-products-variant-selector">
+              {% for variant in currentRelated.variants %}
+                <option value="{{variant.id}}">{{variant.title}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          {% endif %}
+          <div class="custom-upsells__checkmark">
+            <input class="checkbox-rp" type="checkbox" value="{{currentRelated.selected_or_first_available_variant.id}}" tabindex="0" hidden>
+            <svg class="custom-upsells__checkmark-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none"></circle><path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path></svg>
+          </div>
+          <div class="custom-upsells__add-to-cart">+{{currentRelated.price | money }}</div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+<script>
+  var neededScreenSize = {{neededScreenSize}};
+  if(neededScreenSize > window.innerWidth){
+    $(".custom-upsells__products").slick({
+      arrows:true,
+      autoplay:false,
+      centerMode: true,
+      initialSlide: 1,
+      slidesToShow: 5,
+      variableWidth:true,
+      responsive: [
+    {
+      breakpoint: 1400,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 1200,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 1000,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows:true,
+        variableWidth: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      }
+    }
+  ]
+    });
+  }
+</script>
+{% endif %}
+<div class="d-flex flex-column flex-md-row justify-content-between">
+  <div class="product__review-section">
+    {% if product.metafields.pdp.review_video != blank %}
+      <h2 class="product__review-title d-none d-md-block text-center text-uppercase mb-1">{{ productTitle | remove: 'The ' }} Review & User Guide</h2>
+        {{ product.metafields.pdp.review_video }}
+      <h2 class="product__review-title d-block d-md-none text-center text-uppercase mb-1">{{ productTitle | remove: 'The ' }} Review & User Guide</h2>
+    {% endif %}
+    {% if product.metafields.pdp.product_overview != blank %}
+      <div class="d-flex mt-2">
+        <p class="product-overview mb-1">{{ product.metafields.pdp.product_overview }}</p>
+      </div>
+    {% endif %}
+    {% if product.metafields.features != blank %}
+      <div class="product__feature-badges d-flex justify-content-around justify-content-md-center align-items-center mt-1 mb-3">
+      {% for feature in product.metafields.features limit: 5 %}
+        {% assign featureParts = feature | last | split: " | " %}
+        <div class="feature-item">
+          <div class="feature-image">
+            <img src="{{ featureParts[0] }}" alt="feature image">
+          </div>
+          <div class="feature-text mt-1">
+            <p>{{ featureParts[1] }}</p>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+    {% endif %}
+    <!--Start Review Modules-->
+    {% if product.metafields.modulesOrder != blank %}
+      {% assign moduleLines = product.metafields.modulesOrder.arrange | split: " ||" %}
+      {% for line in moduleLines %}
+        {% assign lineParts = line | strip_newlines | escape | split: "." %}
+        {% if lineParts[0] == 'modules' %}
+          {% if product.metafields[lineParts[0]][lineParts[1]] != blank %}
+            <div class="product__review-modules">
+              {% assign moduleParts = product.metafields[lineParts[0]][lineParts[1]] | split: " ||" %}
+              <div class="module-item mb-4">
+                <h3 class="module-title text-center text-uppercase fw-nm">{{ moduleParts[0] }}</h3>
+                <p class="module-subtitle text-center text-uppercase mb-3">{{ moduleParts[1] }}</p>
+                <div class="module-parts d-flex flex-column flex-lg-row justify-content-between">
+                  <div>
+                    {% if moduleParts[2] contains 'https://cdn.shopify' %}
+                      <img src="{{ moduleParts[2] }}" alt="module image">
+                    {% else %}
+                      <p>{{ moduleParts[2] }}</p>
+                    {% endif %}
+                  </div>
+                  <div>
+                    {% if moduleParts[3] contains 'https://cdn.shopify' %}
+                      <img src="{{ moduleParts[3] }}" alt="module image">
+                    {% else %}
+                      <p>{{ moduleParts[3] }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% elsif lineParts[0] == 'modules-full' %}
+          {% if product.metafields[lineParts[0]][lineParts[1]] != blank %}
+            <div class="product__review-modules">
+              {% assign fullParts = product.metafields[lineParts[0]][lineParts[1]] | split: " ||" %}
+              <div class="module-item mb-4">
+                <h3 class="module-title text-center text-uppercase fw-nm">{{ fullParts[0] }}</h3>
+                <p class="module-subtitle text-center text-uppercase mb-3">{{ fullParts[1] }}</p>
+                {% for part in fullParts offset:2 %}
+                  <div class="mb-2">
+                    {% if part contains 'https://cdn.shopify' %}
+                      <img src="{{ part }}" alt="module image">
+                    {% else %}
+                      <p>{{ part }}</p>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% endif %}
+        {% elsif lineParts[0] == 'modules-comparison' %}
+          {% if product.metafields[lineParts[0]][lineParts[1]] != blank %}
+            <div class="product__comparison-module d-flex flex-column flex-lg-row justify-content-between">
+              {% assign moduleParts = product.metafields[lineParts[0]][lineParts[1]] | split: " ||" %}
+              <div class="module-item mr-2 mb-4">
+                {% if moduleParts[0] contains "Strengths" %}
+                  <i class="fas fa-plus"></i>
+                {% else %}
+                  <i class="fas fa-minus"></i>
+                {% endif %}
+                <h3 class="module-title text-center text-uppercase fw-nm">{{ moduleParts[0] }}</h3>
+                <p class="mt-2">{{ moduleParts[1] }}</p>
+              </div>
+              <div class="module-item ml-2 mb-4">
+                {% if moduleParts[2] contains "Strengths" %}
+                  <i class="fas fa-plus"></i>
+                {% else %}
+                  <i class="fas fa-minus"></i>
+                {% endif %}
+                <h3 class="module-title text-center text-uppercase fw-nm">{{ moduleParts[2] }}</h3>
+                <p class="mt-2">{{ moduleParts[3] }}</p>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      {% if product.metafields.modules != blank %}
+        <div class="product__review-modules">
+        {% for module in product.metafields.modules %}
+          {% assign moduleParts = module | last | split: " ||" %}
+          <div class="module-item mb-4">
+            <h3 class="module-title text-center text-uppercase fw-nm">{{ moduleParts[0] }}</h3>
+            <p class="module-subtitle text-center text-uppercase mb-3">{{ moduleParts[1] }}</p>
+            <div class="module-parts d-flex flex-column flex-lg-row justify-content-between">
+              <div>
+                {% if moduleParts[2] contains 'https://cdn.shopify' %}
+                  <img src="{{ moduleParts[2] }}" alt="module image">
+                {% else %}
+                  <p>{{ moduleParts[2] }}</p>
+                {% endif %}
+              </div>
+              <div>
+                {% if moduleParts[3] contains 'https://cdn.shopify' %}
+                  <img src="{{ moduleParts[3] }}" alt="module image">
+                {% else %}
+                  <p>{{ moduleParts[3] }}</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% if product.metafields.modules-full != blank %}
+        <div class="product__review-modules">
+        {% for module in product.metafields.modules-full %}
+          {% assign fullParts = module | last | split: " ||" %}
+          <div class="module-item mb-4">
+            <h3 class="module-title text-center text-uppercase fw-nm">{{ fullParts[0] }}</h3>
+            <p class="module-subtitle text-center text-uppercase mb-3">{{ fullParts[1] }}</p>
+            {% for part in fullParts offset:2 %}
+              <div class="mb-2">
+                {% if part contains 'https://cdn.shopify' %}
+                  <img src="{{ part }}" alt="module image">
+                {% else %}
+                  <p>{{ part }}</p>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+      {% if product.metafields.modules-comparison != blank %}
+        <div class="product__comparison-module d-flex flex-column flex-lg-row justify-content-between">
+        {% for module in product.metafields.modules-comparison %}
+          {% assign moduleParts = module | last | split: " ||" %}
+          <div class="module-item mr-2 mb-4">
+            {% if moduleParts[0] contains "Strengths" %}
+              <i class="fas fa-plus"></i>
+            {% else %}
+              <i class="fas fa-minus"></i>
+            {% endif %}
+            <h3 class="module-title text-center text-uppercase fw-nm">{{ moduleParts[0] }}</h3>
+            <p class="mt-2">{{ moduleParts[1] }}</p>
+          </div>
+          <div class="module-item ml-2 mb-4">
+            {% if moduleParts[2] contains "Strengths" %}
+              <i class="fas fa-plus"></i>
+            {% else %}
+              <i class="fas fa-minus"></i>
+            {% endif %}
+            <h3 class="module-title text-center text-uppercase fw-nm">{{ moduleParts[2] }}</h3>
+            <p class="mt-2">{{ moduleParts[3] }}</p>
+          </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+    {% endif %}
+    <div class="d-block d-md-none">
+      <h2 class="product__review-title text-center text-uppercase">{{ productTitle | remove: 'The ' }}</h2>
+      {% if product.metafields.pdp.sidebar_image %}
+        <img class="product__sidebar-image" src="{{ product.metafields.pdp.sidebar_image }}" alt="sidebar-image">
+      {% endif %}
+      <div class="mt-1 mb-1">
+        <div class="product-price d-flex justify-content-around align-items-baseline">
+          <span class="money">{{ current_variant.price | money_with_currency }}</span>
+        </div>
+        <h5 class="price-guaranteed text-uppercase text-center">Best price guaranteed</h5>
+      </div>
+      {% if product.available %}
+        <form action="/cart/add" method="post" id="add-to-cart-form"
+          {% unless section.settings.show_variant_labels %}class="product-form--hide-variant-labels" {% endunless %}>
+          <div class="d-flex align-items-center w-100">
+            <button type="submit" name="add" id="purchase" class="btn btn-success custom-font"
+              data-use-ajax="{% if section.settings.open_cart_when_added %}true{% else %}false{% endif %}">
+              {{ 'products.product.add_to_cart' | t }}
+            </button>
+          </div>
+          <select name="id" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}"
+            class="form-control original-select product-form__variants no-js">
+            {% for variant in product.variants %}
+            {% if variant.available %}
+            <option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+              {{ variant.title }} - <span class="money">{{ variant.price | money }}</span>
+            </option>
+            {% else %}
+            <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+  
+          <div class="bold_options" data-product-id="{{ product.id }}"></div>
+          {% if section.settings.show_quantity_selector %}
+            <div
+              class="selector-wrapper {% if section.settings.image_size == 'large' %}col-md-12{% else %}col-md-6{% endif %} col-sm-12 col-xs-12">
+              <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+              <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+            </div>
+          {% endif %}
+        </form>
+      {% endif %}
+      <p class="mt-2">{{ section.settings.assurance_text }}</p>
+      <div class="assurance-images d-flex justify-content-between">
+        <div>
+          <img src="{{ section.settings.assurance_image_1 | img_url: '120x' }}" alt="Assurance Images">
+        </div>
+        <div>
+          <img src="{{ section.settings.assurance_image_2 | img_url: '50x' }}" alt="Assurance Images">
+        </div>
+      </div>
+      {% if product.metafields.pdp.included != blank %}
+        <div class="pdp-included mt-3 mb-2">
+          <h4 class="fw-lt text-uppercase text-center mb-1">Included</h4>
+          <p>{{ product.metafields.pdp.included }}</p>
+        </div>
+      {% endif %}
+    </div>
+    <div class="review-box">
+      <div id="stamped-main-widget" data-widget-style="standard" data-product-id="{{ product.id }}"
+      data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}"
+      data-image-url="{{ product.featured_image | product_img_url: "large" |replace: '?', '%3F' | replace: '&','%26'}}"
+      data-description="{{ product.description | escape }}" data-product-sku="{{product.handle}}">
+        {{ product.metafields.stamped.reviews }}
+    
+        {% if settings.social_sharing_products %}
+            {% if template contains 'article' or template contains 'blog' %}
+    
+            {% capture permalinkURL %}{{ shop.url }}{{ article.url }}{% endcapture %}
+            {% capture shareTitle %}{{ article.title }}{% endcapture %}
+            {% capture shareImage %}{{ article | img_url: '1024x1024' }}{% endcapture %}
+    
+            {% elsif template contains 'product' %}
+    
+            {% capture permalinkURL %}{{ shop.url }}{{ product.url }}{% endcapture %}
+            {% capture shareTitle %}{{ product.title }}{% endcapture %}
+            {% capture shareImage %}{{ product.featured_image | product_img_url: 'original' }}{% endcapture %}
+    
+            {% endif %}
+    
+            <div id="sharing" class="social-sharing" data-permalink="{{ permalinkURL }}">
+    
+              {% if settings.share_facebook %}
+              <!-- https://developers.facebook.com/docs/plugins/share-button/ -->
+              <a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook">
+                <span class="icon icon-facebook" aria-hidden="true"></span>
+                <span class="share-title">Share</span>
+              </a>
+              {% endif %}
+    
+              {% if settings.share_twitter %}
+              <!-- https://dev.twitter.com/docs/intents -->
+              <a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}&amp;text={{ shareTitle }}"
+                class="share-twitter">
+                <span class="icon icon-twitter" aria-hidden="true"></span>
+                <span class="share-title">Tweet</span>
+              </a>
+              {% endif %}
+    
+              {% if settings.share_google %}
+              <!--
+        https://developers.pinterest.com/pin_it/
+        Pinterest get data from the same Open Graph meta tags Facebook uses
+        -->
+              <a target="_blank"
+                href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media={{ shareImage }}&amp;description={{ product.title | escape }}"
+                class="share-pinterest">
+                <span class="icon icon-pinterest" aria-hidden="true"></span>
+                <span class="share-title">Pin it</span>
+              </a>
+              {% endif %}
+    
+            </div>
+            {% endif %}
+    
+            <div class="stamped-checkout-comments-placeholder-mobile"></div>
+    
+            {% if section.settings.show_reviews %}
+            <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
+            {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="product__sidebar pl-2">
+    <div class="position-sticky">
+      <h2 class="product__review-title text-center text-uppercase">{{ productTitle | remove: 'The ' }}</h2>
+      {% if product.metafields.pdp.sidebar_image %}
+        <img src="{{ product.metafields.pdp.sidebar_image }}" alt="sidebar-image">
+      {% endif %}
+      <div class="mt-1 mb-1 pl-2 pr-2">
+        <div class="product-price d-flex justify-content-around align-items-baseline">
+          <span class="money">{{ current_variant.price | money_with_currency }}</span>
+        </div>
+        <h5 class="price-guaranteed text-uppercase text-center">Best price guaranteed</h5>
+      </div>
+      {% if product.available %}
+        <form action="/cart/add" method="post" id="add-to-cart-form"
+          {% unless section.settings.show_variant_labels %}class="product-form--hide-variant-labels" {% endunless %}>
+          <div class="d-flex align-items-center w-100">
+            <button type="submit" name="add" id="purchase" class="btn btn-success custom-font"
+              data-use-ajax="{% if section.settings.open_cart_when_added %}true{% else %}false{% endif %}">
+              {{ 'products.product.add_to_cart' | t }}
+            </button>
+          </div>
+
+          <select name="id" id="ProductSelect-{{ section.id }}" data-section="{{ section.id }}"
+            class="form-control original-select product-form__variants no-js">
+            {% for variant in product.variants %}
+            {% if variant.available %}
+            <option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+              {{ variant.title }} - <span class="money">{{ variant.price | money }}</span>
+            </option>
+            {% else %}
+            <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+
+
+          <div class="bold_options" data-product-id="{{ product.id }}"></div>
+          {% if section.settings.show_quantity_selector %}
+            <div
+              class="selector-wrapper {% if section.settings.image_size == 'large' %}col-md-12{% else %}col-md-6{% endif %} col-sm-12 col-xs-12">
+              <label for="Quantity">{{ 'products.product.quantity' | t }}</label>
+              <input type="number" id="Quantity" name="quantity" value="1" min="1" class="quantity-selector">
+            </div>
+          {% endif %}
+        </form>
+      {% endif %}
+      <p class="mt-2">{{ section.settings.assurance_text }}</p>
+      <div class="assurance-images d-flex justify-content-between">
+        <div>
+          <img src="{{ section.settings.assurance_image_1 | img_url: '150x' }}" alt="Assurance Images">
+        </div>
+        <div>
+          <img src="{{ section.settings.assurance_image_2 | img_url: '80x' }}" alt="Assurance Images">
+        </div>
+      </div>
+      {% if product.metafields.pdp.included != blank %}
+        <div class="pdp-included mt-3 mb-2">
+          <h4 class="fw-lt text-uppercase text-center mb-1">Included</h4>
+          <p>{{ product.metafields.pdp.included }}</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% if section.settings.enable_related_products %}
+
+<!-- Solution brought to you by Caroline Schnapp -->
+<!-- See this: https://docs.shopify.com/support/your-store/products/can-i-recommend-related-products#finding-a-relevant-collecitons -->
+
+{% comment %}
+Number of related items per row,
+and number of rows.
+{% endcomment %}
+
+{% assign number_of_related_products_per_row = 4 %}
+
+{% comment %}
+Heading.
+Leave blank if you don't need one.
+{% endcomment %}
+
+{% assign heading = section.settings.related_products_title %}
+
+{% comment %}
+Set either or both to true, if you want
+to limit yourself to items with same vendor, and/or type.
+{% endcomment %}
+
+{% assign same_vendor = false %}
+{% assign same_type = false %}
+
+{% comment %}
+Collections to ignore.
+Never pick related items from those.
+{% endcomment %}
+
+{% assign exclusions = 'frontpage,all' | split: ',' %}
+
+{% comment %}
+Looking for a relevant collection.
+{% endcomment %}
+
+{% if product.metafields.c_f['Related Products'] %}
+{% assign collection = collections[product.metafields.c_f['Related Products']] %}
+{% endif %}
+
+{% assign found_a_collection = false %}
+{% if collection and collection.all_products_count > 1 %}
+{% unless exclusions contains collection.handle %}
+{% assign found_a_collection = true %}
+{% endunless %}
+{% endif %}
+{% unless found_a_collection %}
+{% for c in product.collections %}
+{% unless exclusions contains c.handle or c.all_products_count < 2 %}
+{% assign found_a_collection = true %}
+{% assign collection = c %}
+{% break %}
+{% endunless %}
+{% endfor %}
+{% endunless %}
+
+{% comment %}
+If we have a relevant collection.
+{% endcomment %}
+
+{% if found_a_collection %}
+
+{% assign counter = 0 %}
+{% assign break_at = number_of_related_products_per_row %}
+{% assign current_product = product %}
+
+{% case number_of_related_products_per_row %}
+{% when 4 %}
+{% assign grid_item_width = 'col-md-3 col-xs-6' %}
+{% endcase %}
+
+{% capture related_items %}
+{% for product in collection.products %}
+{% unless product.handle == current_product.handle %}
+{% unless same_vendor and current_product.vendor != product.vendor %}
+{% unless same_type and current_product.type != product.type %}
+{% comment %}
+Set the default grid_item_width if no variable is set
+{% endcomment %}
+{% unless grid_item_width %}
+{% assign grid_item_width = 'large--one-third medium--one-half' %}
+{% endunless %}
+
+{% comment %}
+Check if the product is on sale and set a variable to be used below.
+{% endcomment %}
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+{% assign on_sale = true %}
+{% endif %}
+
+{% comment %}
+Check if the product is sold out and set a variable to be used below.
+{% endcomment %}
+{% assign sold_out = true %}
+{% if product.available %}
+{% assign sold_out = false %}
+{% endif %}
+
+<div class="grid__item {{ grid_item_width }} indiv-product-wrapper
+
+{% case section.settings.grid %}
+{% when '3' %}
+  {% cycle ' alpha', '', ' omega' %}
+{% when '4' %}
+{% cycle ' alpha', '', 'mobile-clear', ' omega' %}
+{% endcase %}
+
+">
+
+  <div class="indiv-product">
+
+    <a href="{{ product.url | within: collection }}" title="{{product.title}}">
+      <img src="{{ product.featured_image | product_img_url: '760x' }}'" alt="{{product.title}}"
+        class="img-responsive wow fadeIn" id="collection-image-anim">
+    </a>
+
+    <div class="hp-title">
+
+      {% if section.settings.show-vendor %}
+      <div class="indiv-product-vendor-text">{{ product.vendor | link_to_vendor }}</div>
+      {% endif %}
+
+      <a href="{{ product.url | within: collection }}">
+
+        <div class="indiv-product-title-text">{{ product.title }}</div>
+
+        <span class="money-styling custom-font">
+
+          {% if product.compare_at_price_max > product.price %}
+          <h5 class="custom-font compare-at-price">
+            <span class="money">{{ product.compare_at_price_max | money }}</span>
+          </h5>
+          {% endif %}
+
+          {% if product.available %}
+          {% if product.price_varies %}
+          <small>{{ 'products.general.from' | t }}</small> <span class="money">{{ product.price_min | money }}</span>
+          {% else %}
+          <span class="money">{{ product.price_min | money }}</span>
+          {% endif %}
+          {% else %}
+          <p class="product-dets-sold-out">{{ 'products.product.sold_out' | t }}</p>
+          {% endif %}
+
+        </span>
+      </a>
+    </div>
+  </div>
+
+  {% if product.compare_at_price_max > product.price %}
+  <div class="sale-badge">{{ 'products.general.sale' | t }}</div>
+  {% endif %}
+
+</div>
+
+{% assign counter = counter | plus: 1 %}
+{% if counter == break_at %}
+{% break %}
+{% endif %}
+{% endunless %}
+{% endunless %}
+{% endunless %}
+{% endfor %}
+{% endcapture %}
+
+{% assign related_items = related_items | trim %}
+
+{% unless related_items == blank %}
+
+<div class="product-page-related-products">
+
+  {% unless heading == blank %}
+  <div class="title-bar custom-font">
+    <h2>{{ heading }}</h2>
+    <div class="clear"></div>
+  </div>
+  {% endunless %}
+  <div class="row">
+    {{ related_items }}
+  </div>
+
+</div>
+
+{% endunless %}
+
+{% endif %}
+
+{% endif %}
+
+{% unless product.empty? %}
+<script type="application/json" id="ProductJson-{{ section.id }}">
+  {{ product | json }}
+</script>
+{% endunless %}
+
+<script>
+  $(".form-control").on('change', function(e){
+    setTimeout(function() {
+      var currentMoney = $('#price-field .money').html();
+      $('.product-price .money').html(currentMoney);
+    });
+  });
+</script>
+
+{% for collection in product.collections %}
+{% if collection.title contains 'All Glass Pieces' %}
+<script>
+  $('.tooltip-new span:first-child').on('click', function () {
+    $('.tooltip-new input').toggleClass('checked');
+  });
+
+  var item_price = Number({{ current_variant.price | money_without_currency }});
+  var insurance_option_1 = {{ all_products['glass-protect-1-49'].variants.first.id }};
+  var insurance_option_2 = {{ all_products['glass-protect-2-49'].variants.first.id }};
+  var insurance_option_3 = {{ all_products['glass-protect-4-49'].variants.first.id }};
+  var insurance_option_4 = {{ all_products['glass-protect-5-49'].variants.first.id }};
+  var has_selector = {{ section.settings.show_quantity_selector }};
+  var product_title = "{{ product.title }}";
+  var product_id = {{ product.id }};
+</script>
+{% endif %}
+{% endfor %}
+
+<script>
+  $('#purchase').on('click', function () {
+    if ($('.icon-cart__cart-count:visible').length == 0) {
+      $('.icon-cart__cart-count').css('display', 'inline-block');
+      $('.slide-menu-cart').addClass('hover-color');
+    }
+
+    var quantity = parseInt(jQuery('[name="quantity"]').val(), 10) || 1;
+    var cartCount = parseInt($('.icon-cart__cart-count').html()) + quantity;
+    $('.icon-cart__cart-count').html(cartCount);
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Product pages",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-vendor",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_selector",
+      "label": "Show quantity selector",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_variant_labels",
+      "label": "Show variant labels",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "open_cart_when_added",
+      "label": "Open cart when item is added",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "assurance_text",
+      "label": "Assurance Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "assurance_image_1",
+      "label": "Assurance Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "assurance_image_2",
+      "label": "Assurance Image 2"
+    },
+    {
+  	  "type": "header",
+  	  "content": "Related products"
+  	},
+    {
+      "type": "checkbox",
+      "id": "enable_related_products",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "related_products_title",
+      "label": "Heading",
+      "default": "Other fine products"
+    },
+  	{
+  	  "type": "header",
+  	  "content": "Product images"
+  	},
+    {
+      "type": "select",
+      "id": "image_size",
+      "label": "Image size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "medium"
+    },
+    {
+      "type": "select",
+      "id": "thumbnail_position",
+      "label": "Thumbnail position",
+      "options": [
+        {
+          "value": "below",
+          "label": "Below main image"
+        },
+        {
+          "value": "left",
+          "label": "Left of main image"
+        },
+        {
+          "value": "right",
+          "label": "Right of main image"
+        }
+      ],
+      "default": "below"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Reviews"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_reviews",
+      "label": "Enable",
+      "default": false
+    },
+    {
+      "type": "paragraph",
+      "content": "You will need to install Shopify's [Product Reviews app](https://apps.shopify.com/product-reviews) before enabling this option."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "id": "image",
+          "type": "image_picker",
+          "label": "Feature Image"
+        },
+        {
+          "id": "text",
+          "type": "text",
+          "label": "Feature Text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div id="cbb-also-bought-box"></div>

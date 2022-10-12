@@ -1,0 +1,8 @@
+development:
+  password: c72dcde4e612b4e57ec529d28157c49f
+  theme_id: "81943298126"
+  store: great-white-north-vaporizer-company.myshopify.com
+production:
+  password: c72dcde4e612b4e57ec529d28157c49f
+  theme_id: "80695033934"
+  store: great-white-north-vaporizer-company.myshopify.com

@@ -1,0 +1,20 @@
+<div class="banner-announcement section-item flex-col-100-laptop">
+    <h1>
+        <span class="banner-announcement__text-accent">Questions? Call us at </span><a href="tel:1-800-677-5095">1-800-677-5095</a>
+        <br>
+        <span class="banner-announcement__text-accent">Interac? </span><a href="mailto:info@vapenorth.ca">info@vapenorth.ca</a>
+    </h1>
+</div>
+<div class="banner-icons section-item flex-parent flex-wrap flex-col-100-laptop flex-justify-evenly">
+    <!-- Icons for Payment Types -->
+    <div class="banner-icons__row flex-parent flex-justify-evenly flex-align-center flex-col-100">
+        <div class="banner-icons__icon flex-col-30"><i class="fab fa-cc-visa"></i></div>
+        <div class="banner-icons__icon flex-col-30"><i class="fab fa-cc-mastercard"></i></div>
+        <div id="interac" class="banner-icons__icon flex-col-30">{{ 'interac-gray.png' | asset_url | img_tag }}</div>
+    </div>
+    <div class="banner-icons__row flex-parent flex-justify-evenly flex-align-center flex-col-100">
+        <div class="banner-icons__icon flex-col-30">{{ 'shopify_secure_2.png' | asset_url | img_tag }}</div>
+        <div class="banner-icons__icon flex-col-30">{{ 'aes.png' | asset_url | img_tag }}</div>
+        <div class="banner-icons__icon flex-col-30">{{ 'stripe.png' | asset_url | img_tag }}</div>
+    </div>
+</div>

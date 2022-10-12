@@ -1,0 +1,29 @@
+<h1 class="custom-font product-description-header">{{product.title}}</h1>
+<div>
+  <div>
+    <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" style="display: inline-block;">{{ product.metafields.stamped.badge }}</span> | <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" style="display: inline-block;" data-type="qna"></span>
+  </div> 
+  <h5 class="custom-font compare-at-price js">
+    {% if product.compare_at_price > product.price %}
+      <span class="money">{{ product.compare_at_price | money }}</span>
+    {% endif %}
+  </h5>
+  <h3 class="custom-font js" id="price-field"><span class="money">{{ product.price | money }}</span></h3>
+</div>
+
+<div style="overflow-wrap: break-word; margin-top:2rem;">
+  {{section.settings.product-text}}
+</div>
+
+{% schema %}
+{
+  "name": "Product Promotion",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "product-text",
+      "label": "Product Text"
+    }
+  ]
+}
+{% endschema %}

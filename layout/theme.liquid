@@ -1,0 +1,202 @@
+<!-- NN - LOCATION REDIRECT REMOVAL -->
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+	<meta charset="utf-8">
+
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+	<!-- Title and description ================================================== -->
+	<title>
+		{{ page_title }}{% if current_tags %}{% assign meta_tags = current_tags | join: ', ' %} &ndash;
+		{{ 'general.meta.tags' | t: tags: meta_tags }}{% endif %}{% if current_page != 1 %} &ndash;
+		{{ 'general.meta.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash;
+		{{ shop.name }}{% endunless %}
+	</title>
+
+	<script type="text/javascript">
+		document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+	</script>
+
+	{% if page_description %}
+	<meta name="description" content="{{ page_description | escape }}">
+	{% endif %}
+	{% if template contains 'product' %}
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+	{% else %}
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% endif %}
+	{% include 'social-meta-tags' %}
+
+	<link rel="canonical" href="{{ canonical_url }}" />
+	
+	<!-- icons -->
+	<script src="https://kit.fontawesome.com/b045d7d4f8.js"></script>
+
+	<!-- CSS -->
+	{{ 'plugins.css' | asset_url | stylesheet_tag }}
+	{{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+	{{ 'style.scss.css' | asset_url | stylesheet_tag }}
+	{{ 'grid-12-col.css' | asset_url | stylesheet_tag }}
+
+	{% include 'font-links' %}
+
+	{% if settings.favicon != blank %}
+	<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+	{% endif %}
+
+	{{ 'slick.css' | asset_url | stylesheet_tag }}
+	{{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+
+	{{ content_for_header }}
+
+	{% if template contains 'customers' %}
+	{{ "shopify_common.js" | shopify_asset_url | script_tag }}
+	{{ "customer_area.js"  | shopify_asset_url | script_tag }}
+	{% endif %}
+
+	{{ 'jquery-1.11.0.min.js' | asset_url | script_tag }}
+	{{ 'plugins.js' | asset_url | script_tag }}
+	{{ 'custom.js' | asset_url | script_tag }}
+	{{ 'slick.js' | asset_url | script_tag }}
+
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	{% include 'sca.freegifts' %}
+
+
+
+
+	<!-- BeginConsistentCartAddon -->
+	<script>  {% if customer %} Shopify.merge_cart_text = '{{ "consistent_cart_addon.merge_cart_text" | t }}'; Shopify.customer_logged_in = true; Shopify.customer_email = "{{ customer.email }}"; Shopify.log_uuids = true; {% else %} Shopify.customer_logged_in = false; Shopify.customer_email = ""; Shopify.log_uuids = true; {% endif %}  </script>
+	<!-- EndConsistentCartAddon -->
+</head>
+
+<body id="{{ page_title | handle }}"
+	class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} flexbox-wrapper">
+
+	{% include 'cart-drawer' %}
+
+	<div id="main-body">
+		<div id="slideout-overlay"></div>
+
+		{% include 'search-bar' %}
+
+		{% section 'announcement-bar' %}
+
+		{% section 'header' %}
+
+		<div id="main" role="main">
+
+			{% unless template == "index" or template == "collection" %}
+			<div class="container">
+				{% endunless %}
+
+				{{ content_for_layout }}
+
+				{% unless template == "index" or template == "collection" %}
+			</div>
+			{% endunless %}
+
+		</div>
+
+		{% section 'footer' %}
+
+		{% include 'homepage-scripts' %}
+
+	</div>
+
+	{% include 'popup' %}
+
+	{% if settings.show_multiple_currencies %}
+	{% include 'currencies' %}
+	{% endif %}
+
+
+	<script>
+		// Translations that will be used in javascript section handling
+		window.theme = {
+		strings: {
+			addToCart: {{ 'products.product.add_to_cart' | t | json }},
+			soldOut: {{ 'products.product.sold_out' | t | json }},
+			unavailable: {{ 'products.product.unavailable' | t | json }},
+			showMore: {{ 'general.filters.show_more' | t | json }},
+			showLess: {{ 'general.filters.show_less' | t | json }}
+		},
+		moneyFormat: {{ shop.money_format | json }}
+    };
+
+		$('.header-search-show').click(function () {
+			$('.header-search-form').toggleClass('slideright');
+			$('.fa-chevron-right').toggle();
+			$('.header-search-slideout #search_submit').toggle();
+		});
+
+		$('.header-search-hide').click(function () {
+			$('.header-search-form').toggleClass('slideright');
+			$('.fa-chevron-right').toggle();
+			$('.header-search-slideout #search_submit').toggle();
+		});
+	</script>
+
+	<script>
+		$('#custom .sod_option').on('click', function() {
+				$('#custom').removeClass('open');
+		});
+	</script>
+
+
+
+	{% include 'booster-discounts' %}
+
+	<!-- BEEKETINGSCRIPT CODE START -->{% include 'bk-tracking' %}
+	<!-- BEEKETINGSCRIPT CODE END -->
+	<script type='text/javascript' async=''
+		src='https://upselly.azurewebsites.net/Scripts/store.min.js?env=https://upselly.azurewebsites.net&v=1&shop=great-white-north-vaporizer-company.myshopify.com'></script>
+	{% include 'back-in-stock-helper' %}
+	<script async type="text/javascript" data-api-key="" id="stamped-script-widget"
+		src="https://cdn-stamped-io.azureedge.net/files/widget.min.js"></script>
+	<div class="index-section--flush powr-chat" id="14abc37a_1567793589"></div>
+	{{ 'sections.js' | asset_url | script_tag }}
+</body>
+
+</html>
